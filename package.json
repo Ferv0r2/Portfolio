@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "next export && type NUL > out/.nojekyll && copy CNAME out && gh-pages -d out -t true"
   },
   "dependencies": {
     "next": "12.2.3",

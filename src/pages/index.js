@@ -26,11 +26,11 @@ export default function Home() {
           <section className="w-11/12 sm:w-full m-auto pb-4">
             <div className="block sm:flex py-8">
               <img
-                className="w-32 rounded-md"
+                className="w-36 rounded-md"
                 src="images/logo.jpg"
                 alt="logo"
               />
-              <div className="ml-auto sm:ml-16 leading-10">
+              <div className="ml-auto sm:ml-16">
                 <h1 className="text-2xl sm:text-3xl font-bold py-3">황원태</h1>
                 <h2 className="text-lg sm:text-xl">
                   👨‍💻 Front-End & Web3 Developer
@@ -38,6 +38,18 @@ export default function Home() {
                 <h3 className="text-sm sm:text-base">
                   도전하고 부딪히며 성장하는 개발자 황원태입니다 😊
                 </h3>
+                <div className="mt-3 font-semibold">
+                  <a target="_blank" href="https://github.com/Ferv0r2">
+                    Github
+                  </a>
+                  <a
+                    className="ml-4"
+                    target="_blank"
+                    href="https://velog.io/@fervor_dev"
+                  >
+                    Blog
+                  </a>
+                </div>
               </div>
             </div>
           </section>
