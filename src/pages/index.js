@@ -20,7 +20,10 @@ export default function Home() {
         }
       >
         <div className="relative py-8 sm:py-16 max-w-3xl w-11/12 sm:w-full m-auto min-h-screen font-[Vitro_core]">
-          <button className="absolute top-4 right-0" onClick={themeBtn}>
+          <button
+            className="absolute top-4 right-0 hover:text-indigo-600"
+            onClick={themeBtn}
+          >
             다크모드 {darkMode ? "ON" : "OFF"} 🌙
           </button>
           <section className="w-11/12 sm:w-full m-auto pb-4">
@@ -39,11 +42,15 @@ export default function Home() {
                   도전하고 부딪히며 성장하는 개발자 황원태입니다 😊
                 </h3>
                 <div className="mt-3 font-semibold">
-                  <a target="_blank" href="https://github.com/Ferv0r2">
+                  <a
+                    className="hover:text-indigo-600"
+                    target="_blank"
+                    href="https://github.com/Ferv0r2"
+                  >
                     Github
                   </a>
                   <a
-                    className="ml-4"
+                    className="ml-4 hover:text-indigo-600"
                     target="_blank"
                     href="https://velog.io/@fervor_dev"
                   >
@@ -118,14 +125,14 @@ export default function Home() {
                     <p>
                       Link -{" "}
                       <a
-                        className="underline"
+                        className="underline hover:text-indigo-600"
                         href="https://kepler-452b.net"
                         target="_blank"
                       >
                         Official Web,
                       </a>
                       <a
-                        className="ml-2 underline"
+                        className="ml-2 underline hover:text-indigo-600"
                         href="https://contents.kepler-452b.net"
                         target="_blank"
                       >
@@ -169,7 +176,7 @@ export default function Home() {
                     <p>
                       Link -{" "}
                       <a
-                        className="underline"
+                        className="underline hover:text-indigo-600"
                         href="https://www.youtube.com/watch?v=xczP9YPL5qQ"
                         target="_blank"
                       >
@@ -214,7 +221,7 @@ export default function Home() {
               </div>
               <div className="block sm:flex items-center">
                 <h3 className="text-base font-semibold">
-                  신구대학 IT미디어학과 (전공심화)
+                  신구대학 IT미디어학과(야간) (전공심화)
                 </h3>
                 <h4 className="ml-0 sm:ml-4 text-sm py-3">
                   2022.03 - 2023.02 (졸업예정)
