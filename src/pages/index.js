@@ -1,8 +1,11 @@
 import React from "react";
 import SEO from "components/layout/SEO";
+import Line from "components/UI/Line";
 
 import { useRecoilState } from "recoil";
 import { themeState } from "components/states";
+
+const title = "text-lg font-[GmarketSansBold]";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useRecoilState(themeState);
@@ -17,13 +20,11 @@ export default function Home() {
       <main
         className={
           darkMode ? "bg-black text-zinc-100" : "bg-zinc-100 text-black"
-        }
-      >
-        <div className="relative py-8 sm:py-16 max-w-3xl w-11/12 sm:w-full m-auto min-h-screen font-[Vitro_core]">
+        }>
+        <div className="relative py-8 sm:py-16 max-w-2xl lg:max-w-3xl w-11/12 sm:w-full m-auto min-h-screen font-[Vitro_core]">
           <button
             className="absolute top-4 right-0 hover:text-indigo-600"
-            onClick={themeBtn}
-          >
+            onClick={themeBtn}>
             다크모드 {darkMode ? "ON" : "OFF"} 🌙
           </button>
           <section className="w-11/12 sm:w-full m-auto pb-4">
@@ -39,21 +40,19 @@ export default function Home() {
                   👨‍💻 Front-End & Web3 Developer
                 </h2>
                 <h3 className="text-sm sm:text-base">
-                  도전하고 부딪히며 성장하는 개발자 황원태입니다 😊
+                  대규모 커뮤니케이션이 가능한 개발자 황원태입니다 😊
                 </h3>
                 <div className="mt-3 font-semibold">
                   <a
                     className="hover:text-indigo-600"
                     target="_blank"
-                    href="https://github.com/Ferv0r2"
-                  >
+                    href="https://github.com/Ferv0r2">
                     Github
                   </a>
                   <a
                     className="ml-4 hover:text-indigo-600"
                     target="_blank"
-                    href="https://velog.io/@fervor_dev"
-                  >
+                    href="https://velog.io/@fervor_dev">
                     Blog
                   </a>
                 </div>
@@ -61,8 +60,8 @@ export default function Home() {
             </div>
           </section>
           <section className="pb-8">
-            <h2 className="text-lg font-[GmarketSansBold]">🔎 Contact</h2>
-            <div className="bg-zinc-600 h-px" />
+            <h2 className={title}>🔎 Contact</h2>
+            <Line />
             <div className="block sm:flex p-3">
               <p className="w-full sm:w-5/12">
                 📧 E-mail : amlk31255@gmail.com
@@ -71,13 +70,16 @@ export default function Home() {
             </div>
           </section>
           <section className="pb-8">
-            <h2 className="text-lg font-[GmarketSansBold]">🔨Tech</h2>
-            <div className="bg-zinc-600 h-px" />
+            <h2 className={title}>🔨Tech</h2>
+            <Line />
             <div className="p-3">
               <div className="py-2">
                 <h3 className="text-lg font-semibold">JavaScript</h3>
                 <div className="py-1">
-                  <p>await/async 등 비동기 처리에 대해 이해하고 있습니다.</p>
+                  <p>
+                    await/async, Promise 등 비동기 처리에 대해 이해하고
+                    있습니다.
+                  </p>
                   <p>
                     React 프레임워크를 활용한 웹 서비스 배포 경험이 있습니다.
                   </p>
@@ -110,8 +112,8 @@ export default function Home() {
             </div>
           </section>
           <section className="pb-8">
-            <h2 className="text-lg font-[GmarketSansBold]">📌 Project</h2>
-            <div className="bg-zinc-600 h-px" />
+            <h2 className={title}>📌 Project</h2>
+            <Line />
             <div className="p-3">
               <div className="py-4">
                 <div className="block sm:flex items-center">
@@ -127,27 +129,22 @@ export default function Home() {
                       <a
                         className="underline hover:text-indigo-600"
                         href="https://kepler-452b.net"
-                        target="_blank"
-                      >
+                        target="_blank">
                         Official Web,
                       </a>
                       <a
                         className="ml-2 underline hover:text-indigo-600"
                         href="https://contents.kepler-452b.net"
-                        target="_blank"
-                      >
+                        target="_blank">
                         DApp Web
                       </a>{" "}
                       (Need to Kaikas Wallet)
                     </p>
                   </div>
                   <p
-                    className={
-                      darkMode
-                        ? "bg-zinc-800 p-4 sm:p-6 rounded-md"
-                        : "bg-zinc-200 p-4 sm:p-6 rounded-md"
-                    }
-                  >
+                    className={`${
+                      darkMode ? "bg-zinc-800" : "bg-zinc-200"
+                    } p-4 sm:p-6 rounded-md`}>
                     Klaytn 체인에서 PFP 프로젝트를 운영하면서 당시 기준 한화 1억
                     원에 해당하는 판매 기록을 달성하였습니다.
                     <br></br>
@@ -178,27 +175,22 @@ export default function Home() {
                       <a
                         className="underline hover:text-indigo-600"
                         href="https://www.youtube.com/watch?v=xczP9YPL5qQ"
-                        target="_blank"
-                      >
+                        target="_blank">
                         Youtube
                       </a>
                     </p>
                   </div>
                   <p
-                    className={
-                      darkMode
-                        ? "bg-zinc-800 p-4 sm:p-6 rounded-md"
-                        : "bg-zinc-200 p-4 sm:p-6 rounded-md"
-                    }
-                  >
+                    className={`${
+                      darkMode ? "bg-zinc-800" : "bg-zinc-200"
+                    } p-4 sm:p-6 rounded-md`}>
                     과학기술정보통신부에서 주최하는 프로보노 공모전에서 앱을
                     개발하여 입상하였습니다.
+                    <br></br>팀 단위로 GPS, 만보기, 캘린더, 간단한 게임 등
+                    다양한 기능을 개발하여 의사소통 능력을 길렀습니다.
                     <br></br>
-                    GPS, 만보기, 일정, 간단한 게임 등 다양한 기능을 개발하며
-                    의사소통 능력을 길렀습니다.
-                    <br></br>
-                    앞선 기능 중에서 GPS를 통한 위치 추적 및 공유 서비스와
-                    포그라운드 기능을 개발하였습니다.
+                    GPS를 통한 위치 추적 및 공유 서비스와 포그라운드 기능을
+                    개발하였습니다.
                     <br></br>이 과정을 통해 앱의 접근 권한과 정책에 대한 개념과
                     앱의 생명주기를 이해하게 되었습니다.
                   </p>
@@ -208,31 +200,31 @@ export default function Home() {
           </section>
 
           <section className="pb-8">
-            <h2 className="text-lg font-[GmarketSansBold]">💡 Education</h2>
-            <div className="bg-zinc-600 h-px" />
+            <h2 className={title}>💡 Education</h2>
+            <Line />
             <div className="p-3">
               <div className="block sm:flex items-center">
                 <h3 className="text-base font-semibold">
                   신구대학 IT소프트웨어과
                 </h3>
                 <h4 className="ml-0 sm:ml-4 text-sm py-3">
-                  2017.03 - 2022.02 (졸업)
+                  2017.03 - 2022.02 (전문학사 졸업)
                 </h4>
               </div>
               <div className="block sm:flex items-center">
                 <h3 className="text-base font-semibold">
-                  신구대학 IT미디어학과(야간) (전공심화)
+                  신구대학 IT미디어학과
                 </h3>
                 <h4 className="ml-0 sm:ml-4 text-sm py-3">
-                  2022.03 - 2023.02 (졸업예정)
+                  2022.03 - 2023.02 (학사 졸업예정)
                 </h4>
               </div>
             </div>
           </section>
           <div className="block sm:flex justify-between pb-8">
             <section className="w-full sm:w-5/12 h-auto sm:h-48">
-              <h2 className="text-lg font-[GmarketSansBold]">📑 Certificate</h2>
-              <div className="bg-zinc-600 h-px" />
+              <h2 className={title}>📑 Certificate</h2>
+              <Line />
               <div className="p-3">
                 <div className="py-4">
                   <div className="items-center">
@@ -253,8 +245,8 @@ export default function Home() {
               </div>
             </section>
             <section className="w-full sm:w-6/12 h-auto sm:h-48">
-              <h2 className="text-lg font-[GmarketSansBold]">🏆 Prize</h2>
-              <div className="bg-zinc-600 h-px" />
+              <h2 className={title}>🏆 Prize</h2>
+              <Line />
               <div className="p-3">
                 <div className="py-4">
                   <h3 className="text-base font-semibold">
