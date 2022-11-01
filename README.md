@@ -1,5 +1,9 @@
 # Portfolio
 
----
+React + NextJS + TypeScript + TailwindCSS
 
-Tech, Project, Education, Certification, Prize
+- Tech
+- Project
+- Education
+- Certification
+- Prize

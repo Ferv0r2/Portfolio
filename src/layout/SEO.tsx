@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import Head from "next/head";
 
 const metaData = {
@@ -10,7 +10,7 @@ const metaData = {
   image: "images/intro.png",
 };
 
-export default function SEO() {
+const SEO: FC = () => {
   return (
     <Head>
       <title>{metaData.title}</title>
@@ -19,7 +19,6 @@ export default function SEO() {
       <meta property="og:url" content={`${metaData.url}`} />
 
       {/* Open Graph */}
-      <meta property="og:type" content={metaData.type} />
       <meta property="og:site_name" content={metaData.siteName} />
       <meta property="og:description" content={metaData.description} />
       <meta property="og:title" content={metaData.title} />
@@ -36,11 +35,13 @@ export default function SEO() {
 
       <link rel="icon" type="image/jpg" href="images/logo.jpg" />
 
-      <meta charset="utf-8" />
+      <meta charSet="utf-8" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
     </Head>
   );
-}
+};
+
+export default SEO;
