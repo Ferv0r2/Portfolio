@@ -1,15 +1,12 @@
 import React, { FC, useEffect, useRef, useState } from "react";
+import { useTheme } from "next-themes";
 
 /* Componenet */
 import { Card, Section } from "components/UI";
 
-/* State */
-import { useRecoilState } from "recoil";
-import { themeState } from "components/State";
-
 const Home: FC = () => {
+  const { theme, setTheme } = useTheme();
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [darkMode, setDarkMode] = useRecoilState(themeState);
 
   useEffect(() => {
     buttonRef.current?.classList.add("animate__fadeIn");
@@ -17,21 +14,20 @@ const Home: FC = () => {
     setTimeout(() => {
       buttonRef.current?.classList.remove("animate__fadeIn");
     }, 300);
-  }, [darkMode]);
+  }, [theme]);
+
+  const themeToggleHandler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
 
   return (
-    <main
-      className={
-        darkMode ? "bg-black text-zinc-100" : "bg-zinc-100 text-black"
-      }>
+    <main className="dark:bg-black dark:text-zinc-100 bg-zinc-100 text-black pb-10">
       <div className="relative py-4 sm:py-16 max-w-2xl lg:max-w-3xl w-11/12 sm:w-full m-auto min-h-screen font-[Vitro_core]">
         <button
           ref={buttonRef}
-          className={`absolute rounded  py-2 px-4 top-4 right-0 animate__animated animate__faster font-semibold hover:text-indigo-600 ${
-            darkMode ? "bg-zinc-800" : "bg-zinc-200"
-          }`}
-          onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? "Dark 🌙" : "Light 🌞"}
+          className="absolute rounded  py-2 px-4 top-4 right-0 animate__animated animate__faster font-semibold hover:text-indigo-600 dark:bg-zinc-800 bg-zinc-200"
+          onClick={themeToggleHandler}>
+          {theme === "light" ? "Light 🌞" : "Dark 🌙"}
         </button>
 
         {/* start::Profile */}
@@ -39,10 +35,7 @@ const Home: FC = () => {
           <div className="block sm:flex py-0 sm:py-4 items-center">
             <div className="relative w-40 mr-12">
               <img className="rounded-md" src="images/logo.jpg" alt="logo" />
-              <div
-                className={`${
-                  darkMode ? "bg-zinc-800" : "bg-zinc-300"
-                } absolute bottom-0 rounded-b-md w-full p-1 flex justify-center`}>
+              <div className="dark:bg-zinc-800 bg-zinc-200 absolute bottom-0 rounded-b w-full p-1 flex justify-center shadow">
                 <a
                   className="flex items-center font-semibold transition-colors duration-300 hover:text-indigo-600"
                   target="_blank"
@@ -62,10 +55,7 @@ const Home: FC = () => {
               <h2 className="text-lg mt-2 sm:text-xl">
                 👨‍💻 Front-End Developer
               </h2>
-              <div
-                className={`${
-                  darkMode ? "bg-zinc-800" : "bg-zinc-200"
-                } rounded p-4 mt-4`}>
+              <div className="dark:bg-zinc-800 bg-zinc-200 rounded p-4 mt-4">
                 <code className="text-sm sm:text-base">
                   I'm a developer who can communicate on a large scale. 😊
                 </code>
@@ -181,7 +171,7 @@ const Home: FC = () => {
                     (Need to Kaikas Wallet)
                   </p>
                 </div>
-                <Card className={darkMode ? "bg-zinc-800" : "bg-zinc-200"}>
+                <Card className="dark:bg-zinc-800 bg-zinc-200">
                   While operating the PFP project in the Klaytn chain, we
                   achieved the sales record of 100 million won as of that time.
                   <br></br>
@@ -216,7 +206,7 @@ const Home: FC = () => {
                     </a>
                   </p>
                 </div>
-                <Card className={darkMode ? "bg-zinc-800" : "bg-zinc-200"}>
+                <Card className="dark:bg-zinc-800 bg-zinc-200">
                   We developed an app and won a prize at the Probono Contest
                   hosted by the Ministry of Science and ICT.
                   <br></br>I developed communication skills by developing
