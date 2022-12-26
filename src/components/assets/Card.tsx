@@ -6,7 +6,11 @@ interface Props {
 }
 
 const Card: FC<Props> = ({ className, children }) => {
-  return <div className={`rounded-md p-4 sm:p-6 ${className}`}>{children}</div>;
+  return (
+    <div className={`mt-2 rounded-lg bg-white border p-4 sm:p-6 ${className}`}>
+      {children}
+    </div>
+  );
 };
 
 export { Card };

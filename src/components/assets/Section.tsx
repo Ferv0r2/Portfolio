@@ -8,7 +8,7 @@ interface Props {
 
 const Section: FC<Props> = ({ className, title, children }) => {
   return (
-    <section className={`${className} pb-6`}>
+    <section className={`${className} pb-8`}>
       <h2 className="text-lg font-[GmarketSansBold]">{title}</h2>
       {children}
     </section>
