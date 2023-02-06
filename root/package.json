@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next export && type NUL > out/.nojekyll && copy CNAME out && gh-pages -d out -t true"
+    "deploy": "next export"
   },
   "dependencies": {
     "@types/node": "^18.11.8",

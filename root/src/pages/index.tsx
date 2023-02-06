@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState, useRef } from "react";
+import { FC, useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import { v1 } from "uuid";
 
@@ -230,7 +230,7 @@ const Home: FC = () => {
                 <h3 className="text-lg font-semibold">
                   Health care app for the elderly with dementia
                 </h3>
-                <h4 className="ml-0 sm:ml-4 text-sm">2021.04 ~ 2022.10</h4>
+                <h4 className="ml-0 sm:ml-4 text-sm">2021.04 ~ 2021.10</h4>
               </div>
               <div className="leading-8">
                 <div className="py-4 text-sm">
