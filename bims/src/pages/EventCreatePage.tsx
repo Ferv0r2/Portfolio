@@ -15,28 +15,22 @@ import { InfoToast } from "components/toast/InfoToast";
 import { Empty } from "components/empty/Empty";
 import { KTSVG, shortAddress } from "utils";
 
-/* State */
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { inputState, resultState, eventInputState } from "stores";
-
 const tutorialInfo = [
+  "",
   "Select your NFT",
   "Select the item items of the event participation conditions",
   'Select item & Press the "Continue" button and Let`s create an event',
 ];
 
-const tutorialPosition = ["bottom-50", "top-0", "top-0"];
+const tutorialPosition = ["", "bottom-50", "top-0", "top-0"];
 
 const EventCreatePage = () => {
   const { collections } = useCollection();
   const { isTutorial, tutorialIndex, onTutorialSkip, onPrev, onNext } =
     useTutorial();
-  const { onReset } = useBasket();
-  const setResult = useSetRecoilState(resultState);
-  const setIsInput = useSetRecoilState(inputState);
-  const [eventInput, setEventInput] = useRecoilState(eventInputState);
-  const [isContinue, setIsContinue] = useState(false);
-  const [isAnimate, setIsAnimate] = useState(false);
+  const { eventInput, setEventInput, onReset } = useBasket();
+  const [isContinue, setIsContinue] = useState<boolean>(false);
+  const [isAnimate, setIsAnimate] = useState<boolean>(false);
 
   const continueHandler = () => {
     if (window.innerWidth < 992) window.scrollTo(0, 0);
@@ -81,7 +75,6 @@ const EventCreatePage = () => {
                 "animate__animated animate__fadeOutUp"
               }`}
             >
-              {/* begin::Tutorial Info */}
               {isTutorial && tutorialIndex !== 0 && (
                 <InfoToast
                   index={tutorialIndex}
@@ -92,9 +85,6 @@ const EventCreatePage = () => {
                   onDone={tutorialIndex === 3 ? onTutorialSkip : null}
                 />
               )}
-              {/* end::Tutorial Info */}
-
-              {/* begin::Select NFT */}
               <div
                 className="card pb-2 mb-5"
                 style={{
@@ -139,7 +129,6 @@ const EventCreatePage = () => {
                   )}
                 </div>
               </div>
-              {/* end::Select NFT */}
               <EventMenu
                 style={{
                   zIndex: tutorialIndex === 2 ? 1100 : "initial",

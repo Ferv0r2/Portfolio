@@ -1,16 +1,34 @@
-import { useSetRecoilState } from "recoil";
-import { inputState, resultState } from "stores";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import {
+  basketState,
+  eventInputState,
+  inputState,
+  resultState,
+  SNSItem,
+} from "stores";
 
 export const useBasket = () => {
-  const setResult = useSetRecoilState(resultState);
+  const [isResult, setIsResult] = useRecoilState(resultState);
+  const [eventInput, setEventInput] = useRecoilState(eventInputState);
+  const [basketItems, setBasketItems] = useRecoilState(basketState);
   const setIsInput = useSetRecoilState(inputState);
 
+  const onAddBasket = (data: SNSItem) => {
+    const newItem = [...basketItems, data];
+    setBasketItems(newItem);
+  };
+
   const onReset = () => {
-    setResult([]);
+    setIsResult([]);
+    setBasketItems([]);
     setIsInput(new Map());
   };
 
   return {
+    isResult,
+    eventInput,
+    setEventInput,
+    onAddBasket,
     onReset,
   };
 };

@@ -1,23 +1,25 @@
 import { Wallet } from "components/auth/WalletModel";
+import { SNSItem } from "stores";
 
-export interface Project {
+export interface NFTBase {
+  name: string;
+  contract: string;
+  thumbnail?: string;
+}
+
+export interface Project extends NFTBase {
   id: number;
   chain_id: 1001 | 8217;
   interface: "kip17" | "kip37";
-  name: string;
   symbol: string;
-  contract: string;
-  thumbnail?: string;
   homepage?: string;
   holder_count: number;
   total_supply: number;
   event_count: number;
 }
 
-export interface NFT {
-  name: string;
+export interface NFT extends NFTBase {
   symbol: string;
-  contract: string;
   total_supply: number;
 }
 
@@ -53,6 +55,13 @@ export interface Holders {
     address: string;
     balance: number;
   }[];
+}
+
+export interface Joiner {
+  address: string;
+  user_id: number;
+  point: number;
+  count: number;
 }
 
 export const dummyAccount: Wallet = {
@@ -755,3 +764,56 @@ export const holderData: NFT & Holders = {
     },
   ],
 };
+
+export const eventJoinData: Joiner[] = [
+  {
+    address: "0xebc0ea128a8103bc8195c302f5b3d30d30bd260f",
+    user_id: 2,
+    point: 3,
+    count: 1,
+  },
+  {
+    address: "0xe1c8d3de5c6b3bc79f84e1677d87a20d32bd87b4",
+    user_id: 6,
+    point: 2,
+    count: 1,
+  },
+];
+
+export const snsArray: SNSItem[] = [
+  {
+    sns: "Facebook",
+    options: ["Link"],
+    type: "primary",
+  },
+  {
+    sns: "Instagram",
+    options: ["Link"],
+    type: "info",
+  },
+  {
+    sns: "Twitter",
+    options: ["Link"],
+    type: "primary",
+  },
+  {
+    sns: "Youtube",
+    options: ["Link"],
+    type: "danger",
+  },
+  {
+    sns: "Discord",
+    options: ["Link", "Join"],
+    type: "info",
+  },
+  {
+    sns: "NFT",
+    options: ["Hold"],
+    type: "info",
+  },
+  {
+    sns: "ETC",
+    options: ["Link"],
+    type: "dark",
+  },
+];

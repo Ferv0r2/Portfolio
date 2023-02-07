@@ -36,13 +36,8 @@ export const useCollection = () => {
   };
 
   const onModify = (data: ModifyData) => {
-    const newCollection = collections.map((project) => {
-      if (project.id === data.id) {
-        project.homepage = data.homepage;
-        project.thumbnail = data.thumbnail;
-      }
-      return project;
-    });
+    const newCollection = collections.map((project) => project);
+    console.log(newCollection);
     setCollections(newCollection);
   };
 

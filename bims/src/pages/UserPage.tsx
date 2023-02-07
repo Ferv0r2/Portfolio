@@ -1,26 +1,47 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-/* API */
-import { useQuery } from "react-query";
-import { NFTDetailAPI, UserEventDetailAPI } from "api";
+/* Hook */
+import { useEvent } from "hooks/useEvent";
+import { useCollection } from "hooks/useCollection";
 
 /* Components */
 import { EventUser } from "components/item/EventUser";
-import { Empty } from "components/empty/Empty";
+import { Event, NFTBase } from "utils";
 
 const UserPage: FC = () => {
   const params = useParams();
-  const { isLoading, data } = useQuery(["UserEvent"], async () => {
-    const res = await UserEventDetailAPI(Number(params.eid));
-    const nft = await NFTDetailAPI(res.project_id);
-    return {
-      ...res,
-      name: nft.name,
-      contract: nft.contract,
-      thumbnail: nft.thumbnail,
-    };
+  const { eventList } = useEvent();
+  const { collections } = useCollection();
+  const [data, setData] = useState<Event & NFTBase>({
+    id: 0,
+    project_id: 0,
+    title: "",
+    content: "",
+    user_point: 0,
+    total_point: 0,
+    start_dt: "",
+    end_dt: "",
+    updated_at: "",
+    created_at: "",
+    items: [],
+    name: "",
+    contract: "",
+    thumbnail: "",
   });
+
+  useEffect(() => {
+    const newData = eventList.filter((v) => v.id === Number(params.eid))[0];
+    const currentProject = collections.filter(
+      (v) => v.id === newData.project_id
+    )[0];
+    setData({
+      ...newData,
+      name: currentProject.name,
+      contract: currentProject.contract,
+      thumbnail: currentProject.thumbnail,
+    });
+  }, [params.eid, eventList, collections]);
 
   return (
     <>
@@ -33,15 +54,9 @@ const UserPage: FC = () => {
         <h2 className="display-6 m-3">{data?.name || "METAONEER"}</h2>
       </div>
       <div className="row m-0 d-flex flex-center py-16 pb-lg-20">
-        {isLoading ? (
-          <div className="col-md-10 col-xxl-4 mx-auto">
-            <Empty>Loading...</Empty>
-          </div>
-        ) : (
-          <div className="w-lg-500px col-11">
-            <EventUser isLoading={isLoading} event={data} />
-          </div>
-        )}
+        <div className="w-lg-500px col-11">
+          <EventUser event={data} />
+        </div>
       </div>
     </>
   );

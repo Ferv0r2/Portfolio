@@ -11,9 +11,11 @@ import { v1 } from "uuid";
 /* Components */
 import { Editor } from "components/editor/Editor";
 import { InputWidget } from "components/input/InputWidget";
-import { ToastWidget } from "components/toast/ToastWidget";
 import { Empty } from "components/empty/Empty";
-import { KTSVG, Project } from "utils";
+import { KTSVG, Project, setColor } from "utils";
+
+/* Hook */
+import { useToast } from "hooks/useToast";
 
 /* State */
 import { useRecoilState, useSetRecoilState } from "recoil";
@@ -24,7 +26,6 @@ import {
   itemOptionState,
   resultState,
 } from "stores";
-import { useToast } from "hooks/useToast";
 
 interface Props {
   nft: Project;
@@ -34,18 +35,6 @@ interface Props {
   continueHandler: MouseEventHandler<HTMLButtonElement>;
   backHandler: MouseEventHandler<HTMLButtonElement>;
 }
-
-export const setColor = (sns: string) => {
-  if (sns === "Facebook" || sns === "Twitter") {
-    return "primary";
-  } else if (sns === "Instagram" || sns === "Discord" || sns === "NFT") {
-    return "info";
-  } else if (sns === "Youtube") {
-    return "danger";
-  } else {
-    return "dark";
-  }
-};
 
 const EventBasket: FC<Props> = ({
   className,

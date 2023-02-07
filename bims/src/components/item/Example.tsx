@@ -6,15 +6,18 @@ import DatePicker from "react-datepicker";
 import { useToast } from "hooks/useToast";
 import { useBasket } from "hooks/useBasket";
 import { useEvent } from "hooks/useEvent";
+import { useAuth } from "hooks/useAuth";
 
 /* Component */
-import { setColor } from "components/card/EventBasket";
-import { ToastWidget } from "components/toast/ToastWidget";
-import { KTSVG, Project } from "utils";
-
-/* State */
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { basketState, eventInputState, inputState, resultState } from "stores";
+import {
+  getDaysDiffer,
+  getHoursDiffer,
+  setColor,
+  KTSVG,
+  Project,
+  shortAddress,
+  underDay,
+} from "utils";
 
 interface Props {
   nft: Project;
@@ -22,14 +25,11 @@ interface Props {
 
 export const Example: FC<Props> = ({ nft }) => {
   const { onUpdate } = useToast();
-  const { onReset } = useBasket();
+  const { isResult, eventInput, onReset } = useBasket();
   const { onAddEvent } = useEvent();
+  const { account } = useAuth();
   const navigate = useNavigate();
   const contentRef = useRef<HTMLDivElement>(null);
-  const [resultItem, setResultItem] = useRecoilState(resultState);
-  const [eventInput, setEventInput] = useRecoilState(eventInputState);
-  const setBasketItem = useSetRecoilState(basketState);
-  const setIsInput = useSetRecoilState(inputState);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
@@ -58,7 +58,7 @@ export const Example: FC<Props> = ({ nft }) => {
 
     const submitItems: any = [];
 
-    resultItem.map((item) => {
+    isResult.map((item) => {
       const itemData = {
         title: item.title,
         content: item.content,
@@ -88,9 +88,6 @@ export const Example: FC<Props> = ({ nft }) => {
       type: "success",
     });
 
-    setResultItem([]);
-    setBasketItem([]);
-    setIsInput(new Map());
     onReset();
     setTimeout(() => {
       navigate("/dashboard");
@@ -104,12 +101,12 @@ export const Example: FC<Props> = ({ nft }) => {
           <h3 className="card-title align-items-start flex-column">
             <span className="card-label fw-bold text-dark">{nft.name}</span>
             <span className="text-muted mt-1 fw-semibold fs-7">
-              {nft.contract.replace(nft.contract.substring(6, 36), "...")}
+              {shortAddress(nft.contract)}
             </span>
           </h3>
           <div className="card-toolbar">
             <button type="button" className="btn btn-sm btn-secondary">
-              Connect Wallet
+              {shortAddress(account.address) || "Connect Wallet"}
             </button>
           </div>
         </div>
@@ -117,7 +114,7 @@ export const Example: FC<Props> = ({ nft }) => {
           <div className="col-4 h-100 border-end">
             <div className="fs-1 fw-bold pb-2 mt-6">
               0 /{" "}
-              {resultItem
+              {isResult
                 ?.map((v) => v.point)
                 .reduce((a, b) => Number(a) + Number(b), 0) || 0}
             </div>
@@ -128,26 +125,17 @@ export const Example: FC<Props> = ({ nft }) => {
             <div className="text-muted">All Participants</div>
           </div>
           <div className="col-4 h-100">
-            {Number(endDate) - Number(startDate) > 24 * 60 * 60 * 1000 ? (
+            {!underDay(startDate, endDate) ? (
               <>
                 <div className="fs-1 fw-bold pb-2 mt-6">
-                  {parseInt(
-                    String(
-                      (Number(endDate) - Number(startDate)) /
-                        (24 * 60 * 60 * 1000)
-                    )
-                  ) || 30}
+                  {getDaysDiffer(startDate, endDate) || 30}
                 </div>
                 <div className="text-muted">Days Left</div>
               </>
             ) : (
               <>
                 <div className="fs-1 fw-bold pb-2 mt-6">
-                  {parseInt(
-                    String(
-                      (Number(endDate) - Number(startDate)) / (60 * 60 * 1000)
-                    )
-                  )}
+                  {getHoursDiffer(startDate, endDate)}
                 </div>
                 <div className="text-muted">Hours Left</div>
               </>
@@ -166,12 +154,12 @@ export const Example: FC<Props> = ({ nft }) => {
             }}
           />
           <div className="card-body p-0 min-h-100px">
-            {resultItem.length > 0 &&
-              resultItem.map((item, index) => (
+            {isResult.length > 0 &&
+              isResult.map((item, index) => (
                 <div
                   key={item.id}
                   className={`d-flex px-6 py-4 align-items-center justify-content-between ${
-                    index !== resultItem.length - 1 && "border-bottom"
+                    index !== isResult.length - 1 && "border-bottom"
                   }`}
                 >
                   <KTSVG
@@ -203,7 +191,7 @@ export const Example: FC<Props> = ({ nft }) => {
             src="/media/logos/favicon.ico"
             className="h-20px me-2"
           />
-          <div className="text-muted">Powered by Metaoneer</div>
+          <div className="text-muted">Powered by Ferv0r2</div>
         </div>
       </div>
       <div className="card mt-4">
@@ -232,9 +220,7 @@ export const Example: FC<Props> = ({ nft }) => {
             <button
               onClick={submitHandler}
               disabled={
-                !eventInput.title ||
-                !eventInput.content ||
-                resultItem.length <= 0
+                !eventInput.title || !eventInput.content || isResult.length <= 0
               }
               type="button"
               className="btn btn-primary"

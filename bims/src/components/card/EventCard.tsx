@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
-import { KTSVG, Project, Event } from "utils";
+import { KTSVG, Project, Event, shortAddress } from "utils";
 
 interface Props {
   event: Event;
@@ -35,7 +35,7 @@ export const EventCard: FC<Props> = ({ event, nft }) => {
           <h3 className="card-title mt-6 pb-2 align-items-start flex-column">
             <span className="card-label fw-bold text-dark">{nft.name}</span>
             <span className="text-muted mt-1 fw-semibold fs-7">
-              {nft.contract.replace(nft.contract.substring(6, 36), "...")}
+              {shortAddress(nft.contract)}
             </span>
           </h3>
           <KTSVG

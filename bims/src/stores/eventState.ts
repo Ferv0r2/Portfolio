@@ -1,11 +1,11 @@
 import { atom } from "recoil";
 import { v1 } from "uuid";
-import { Event } from "utils";
+import { Event, Joiner } from "utils";
 
-interface SNSItem {
-  id: string;
+export interface SNSItem {
   sns: string;
   options: string[];
+  type?: "primary" | "danger" | "info" | "dark";
 }
 
 interface ResultItem {
@@ -56,6 +56,11 @@ const eventListState = atom<Event[]>({
   default: [],
 });
 
+const eventJoinState = atom<Joiner[]>({
+  key: `eventJoinState${v1()}`,
+  default: [],
+});
+
 export {
   basketState,
   itemOptionState,
@@ -63,4 +68,5 @@ export {
   resultState,
   eventInputState,
   eventListState,
+  eventJoinState,
 };

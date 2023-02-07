@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { v1 } from "uuid";
 import clsx from "clsx";
 
 /* Hook */
@@ -9,7 +10,7 @@ import { useToast } from "hooks/useToast";
 /* Component */
 import { Dropdown } from "components/dropdown/Dropdown";
 import { DeleteCheckModal } from "components/modal/DeleteCheckModal";
-import { KTSVG, Project } from "utils";
+import { KTSVG, Project, replaceAccount, shortAddress } from "utils";
 
 interface Props {
   className: string;
@@ -17,7 +18,7 @@ interface Props {
   mode?: string;
 }
 
-const NFTCard: FC<Props> = ({ className, nft, mode }) => {
+export const NFTCard: FC<Props> = ({ className, nft, mode }) => {
   const { onUpdate } = useToast();
   const { onModify, onDelete } = useCollection();
   const navigate = useNavigate();
@@ -100,7 +101,7 @@ const NFTCard: FC<Props> = ({ className, nft, mode }) => {
                 {nft.contract}
               </span>
               <span className="d-inline d-md-none text-gray-400 fw-semibold">
-                {nft.contract.replace(nft.contract.substring(6, 36), "...")}
+                {shortAddress(nft.contract)}
               </span>
             </div>
           </div>
@@ -144,19 +145,16 @@ const NFTCard: FC<Props> = ({ className, nft, mode }) => {
           >
             <div className={clsx("d-flex", mode && "min-w-200px")}>
               <div className="fw-bolder">
-                <ol className={clsx("p-0", mode && "pe-4")}>Name</ol>
-                <ol className={clsx("p-0", mode && "pe-4")}>Symbol</ol>
-                <ol className={clsx("p-0", mode && "pe-4")}>Total supply</ol>
+                {["Name", "Symbol", "Total supply"].map((v) => (
+                  <ol key={v1()} className={clsx("p-0", mode && "pe-4")}>
+                    {v}
+                  </ol>
+                ))}
               </div>
               <div>
                 <ol>{nft.name}</ol>
                 <ol>{nft.symbol}</ol>
-                <ol>
-                  {String(nft.total_supply).replace(
-                    /\B(?=(\d{3})+(?!\d))/g,
-                    ","
-                  )}
-                </ol>
+                <ol>{replaceAccount(nft.total_supply)}</ol>
               </div>
             </div>
             <div className="d-flex">
@@ -166,20 +164,8 @@ const NFTCard: FC<Props> = ({ className, nft, mode }) => {
                 {mode && <ol className="p-0 pe-4">Official Site</ol>}
               </div>
               <div>
-                <ol>
-                  {String(nft.holder_count).replace(
-                    /\B(?=(\d{3})+(?!\d))/g,
-                    ","
-                  )}
-                </ol>
-                <ol>
-                  {nft.event_count
-                    ? String(nft.event_count).replace(
-                        /\B(?=(\d{3})+(?!\d))/g,
-                        ","
-                      )
-                    : 0}
-                </ol>
+                <ol>{replaceAccount(nft.holder_count)}</ol>
+                <ol>{nft.event_count ? replaceAccount(nft.event_count) : 0}</ol>
                 {mode && (
                   <ol>
                     <a
@@ -224,5 +210,3 @@ const NFTCard: FC<Props> = ({ className, nft, mode }) => {
     </>
   );
 };
-
-export { NFTCard };
