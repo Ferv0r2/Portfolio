@@ -39,7 +39,7 @@ export const InputWidget: FC<Props> = ({
           name="content"
           defaultValue={content}
           onChange={onChange}
-          placeholder={`${option} on @metaoneer`}
+          placeholder={`${option} on @Ferv0r2`}
         />
       </div>
       {option === "Hold" ? (

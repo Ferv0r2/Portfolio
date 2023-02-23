@@ -46,22 +46,22 @@ export const CalendarItem: FC<Props> = ({ className }) => {
         {
           id: "cal0",
           name: "Event",
-          backgroundColor: `${mode === "light" ? "#50CD89" : "#40da8a"}`,
+          backgroundColor: `${mode === "light" ? "#8adcac" : "#40da8a"}`,
         },
         {
           id: "cal1",
           name: "Event",
-          backgroundColor: `${mode === "light" ? "#ffc700" : "#f1bc00"}`,
+          backgroundColor: `${mode === "light" ? "#ffd76b" : "#f1bc00"}`,
         },
         {
           id: "cal2",
           name: "Event",
-          backgroundColor: `${mode === "light" ? "#009ef7" : "#0095e8"}`,
+          backgroundColor: `${mode === "light" ? "#97cffb" : "#0095e8"}`,
         },
         {
           id: "cal3",
           name: "Event",
-          backgroundColor: `${mode === "light" ? "#f1416c" : "#d9214e"}`,
+          backgroundColor: `${mode === "light" ? "#F78484" : "#d9214e"}`,
         },
       ],
       month: {

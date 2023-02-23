@@ -1,8 +1,7 @@
-import { FC } from "react";
 import { useToast } from "hooks/useToast";
 import { KTSVG } from "utils";
 
-const DiscordAuthPage: FC = () => {
+const DiscordAuthPage = () => {
   const { onUpdate } = useToast();
 
   const authHandler = async () => {
@@ -17,7 +16,7 @@ const DiscordAuthPage: FC = () => {
       <div className="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
         <div className="d-flex mb-12 align-items-center">
           <img alt="Logo" src="/media/logos/favicon.ico" className="h-45px" />
-          <h2 className="display-6 m-3">METAONEER</h2>
+          <h2 className="display-6 m-3">BIMS</h2>
         </div>
         <div className="card shadow mx-auto">
           <div className="card-header border-0 pt-6">

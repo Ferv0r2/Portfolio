@@ -1,6 +1,3 @@
-import React from "react";
-
-/* Components */
 import { Login } from "components/auth/Login";
 import { Footer } from "layout/components/Footer";
 

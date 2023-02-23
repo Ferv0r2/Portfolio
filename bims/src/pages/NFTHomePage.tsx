@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { NFTCard } from "components/card/NFTCard";
+import { NFTCard } from "components/card";
 import { TabTable } from "components/tab/TabTable";
 import { Project } from "utils";
 

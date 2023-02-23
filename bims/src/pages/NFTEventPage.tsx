@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from "react";
 import { useEvent } from "hooks/useEvent";
 
 /* Components */
-import { EventCard } from "components/card/EventCard";
+import { EventCard } from "components/card";
 import { Empty } from "components/empty/Empty";
 import { Event, KTSVG, Project } from "utils";
 

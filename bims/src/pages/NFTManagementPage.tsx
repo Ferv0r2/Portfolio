@@ -1,14 +1,14 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 
 /* Hooks */
 import { useCollection } from "hooks/useCollection";
 import { useToast } from "hooks/useToast";
 
 /* Components */
-import { NFTCard } from "components/card/NFTCard";
+import { NFTCard } from "components/card";
 import { Empty } from "components/empty/Empty";
 
-const NFTManagementPage: FC = () => {
+const NFTManagementPage = () => {
   const { collections, onAddCollection } = useCollection();
   const { onUpdate } = useToast();
   const [contract, setContract] = useState<string>("");
@@ -101,7 +101,7 @@ const NFTManagementPage: FC = () => {
           collections?.map((nft) => (
             <NFTCard
               key={nft.contract}
-              className="col-11 col-lg-5 mx-lg-4 mx-auto m-4"
+              className="col-md-10 col-xxl-5 mx-md-auto mx-xxl-4 m-4"
               nft={nft}
             />
           ))

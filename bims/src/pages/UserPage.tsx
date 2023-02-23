@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 /* Hook */
@@ -6,13 +6,15 @@ import { useEvent } from "hooks/useEvent";
 import { useCollection } from "hooks/useCollection";
 
 /* Components */
-import { EventUser } from "components/item/EventUser";
+import { EventEndCard } from "components/card";
+import { Empty } from "components/empty/Empty";
 import { Event, NFTBase } from "utils";
 
-const UserPage: FC = () => {
+const UserPage = () => {
   const params = useParams();
   const { eventList } = useEvent();
   const { collections } = useCollection();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [data, setData] = useState<Event & NFTBase>({
     id: 0,
     project_id: 0,
@@ -31,16 +33,25 @@ const UserPage: FC = () => {
   });
 
   useEffect(() => {
-    const newData = eventList.filter((v) => v.id === Number(params.eid))[0];
-    const currentProject = collections.filter(
-      (v) => v.id === newData.project_id
-    )[0];
-    setData({
-      ...newData,
-      name: currentProject.name,
-      contract: currentProject.contract,
-      thumbnail: currentProject.thumbnail,
-    });
+    setIsLoading(true);
+    if (collections.length !== 0 && eventList.length !== 0) {
+      const newData = eventList.filter((v) => v.id === Number(params.eid))[0];
+      const currentProject = collections.filter(
+        (v) => v.id === newData.project_id
+      )[0];
+      const totalPoint = newData.items
+        .map((v) => v.point)
+        .reduce((acc, cur) => acc + cur, 0);
+
+      setData({
+        ...newData,
+        total_point: totalPoint,
+        name: currentProject.name,
+        contract: currentProject.contract,
+        thumbnail: currentProject.thumbnail,
+      });
+      setIsLoading(false);
+    }
   }, [params.eid, eventList, collections]);
 
   return (
@@ -51,11 +62,15 @@ const UserPage: FC = () => {
           src={data?.thumbnail || "/media/logos/favicon.ico"}
           className="h-45px rounded-circle"
         />
-        <h2 className="display-6 m-3">{data?.name || "METAONEER"}</h2>
+        <h2 className="display-6 m-3">{data?.name || "BIMS"}</h2>
       </div>
       <div className="row m-0 d-flex flex-center py-16 pb-lg-20">
         <div className="w-lg-500px col-11">
-          <EventUser event={data} />
+          {isLoading ? (
+            <Empty>Loading...</Empty>
+          ) : (
+            <EventEndCard event={data} />
+          )}
         </div>
       </div>
     </>

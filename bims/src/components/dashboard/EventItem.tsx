@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import { useCollection } from "hooks/useCollection";
+import { getDaysDiffer } from "utils";
 
 interface Props {
   eventItem: any;
@@ -51,25 +52,15 @@ export const EventItem: FC<Props> = ({ eventItem, isType, index }) => {
         )}
       >
         {isType === 0 &&
-          `D-${
-            Math.floor(
-              (Number(new Date(eventItem.end_dt)) - Number(new Date())) /
-                (24 * 60 * 60 * 1000)
-            ) || "day"
-          }`}
+          `D${getDaysDiffer(new Date(eventItem.end_dt), new Date()) || "-day"}`}
         {isType === 1 &&
           `D+${
-            Math.floor(
-              (Number(new Date()) - Number(new Date(eventItem.end_dt))) /
-                (24 * 60 * 60 * 1000)
-            ) || "day"
+            Math.abs(getDaysDiffer(new Date(), new Date(eventItem.end_dt))) ||
+            "day"
           }`}
         {isType === 2 &&
-          `D-${
-            Math.floor(
-              (Number(new Date(eventItem.start_dt)) - Number(new Date())) /
-                (24 * 60 * 60 * 1000)
-            ) || "day"
+          `D${
+            getDaysDiffer(new Date(eventItem.start_dt), new Date()) || "-day"
           }`}
       </span>
     </div>

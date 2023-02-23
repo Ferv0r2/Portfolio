@@ -7,8 +7,7 @@ import { useTutorial } from "hooks/useTutorial";
 import { useBasket } from "hooks/useBasket";
 
 /* Components */
-import { EventBasket } from "components/card/EventBasket";
-import { EventMenu } from "components/card/EventMenu";
+import { EventBasket, EventMenu } from "components/card";
 import { Example } from "components/item/Example";
 import { TutorialToast } from "components/toast/TutorialToast";
 import { InfoToast } from "components/toast/InfoToast";

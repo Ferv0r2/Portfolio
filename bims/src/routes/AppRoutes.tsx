@@ -12,9 +12,8 @@ import DiscordAuthPage from "pages/DiscordAuthPage";
 /* Hooks */
 import { useAuth } from "hooks/useAuth";
 
-const AppRoutes = () => {
+export const AppRoutes = () => {
   const { auth } = useAuth();
-  console.log(auth);
 
   return (
     <BrowserRouter basename="/">
@@ -42,5 +41,3 @@ const AppRoutes = () => {
     </BrowserRouter>
   );
 };
-
-export { AppRoutes };

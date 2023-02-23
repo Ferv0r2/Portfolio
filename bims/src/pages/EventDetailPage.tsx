@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import CopyToClipboard from "react-copy-to-clipboard";
 import { useParams } from "react-router-dom";
+import CopyToClipboard from "react-copy-to-clipboard";
 
 /* Hook */
 import { useEvent } from "hooks/useEvent";
@@ -9,17 +9,17 @@ import { useCollection } from "hooks/useCollection";
 import { useJoin } from "hooks/useJoin";
 
 /* Component */
-import { EventUser } from "components/item/EventUser";
+import { EventEndCard } from "components/card";
 import { UserTable } from "components/table/UserTable";
 import { KTSVG, Event, NFTBase, Joiner } from "utils";
 
 const BASE_URL = "https://bims.wontae.site/user/";
-const EventDetailPage: FC = () => {
+const EventDetailPage = () => {
   const params = useParams();
-  const [copied, setCopied] = useState<boolean>(false);
   const { eventList } = useEvent();
   const { collections } = useCollection();
   const { eventJoinList } = useJoin();
+  const [copied, setCopied] = useState<boolean>(false);
   const [userArray, setUserArray] = useState<Joiner[]>([]);
   const [data, setData] = useState<Event & NFTBase>({
     id: 0,
@@ -43,8 +43,13 @@ const EventDetailPage: FC = () => {
     const currentProject = collections.filter(
       (v) => v.id === newData.project_id
     )[0];
+    const totalPoint = newData.items
+      .map((v) => v.point)
+      .reduce((acc, cur) => acc + cur, 0);
+
     setData({
       ...newData,
+      total_point: totalPoint,
       name: currentProject.name,
       contract: currentProject.contract,
       thumbnail: currentProject.thumbnail,
@@ -52,7 +57,7 @@ const EventDetailPage: FC = () => {
   }, [params.eid, eventList, collections]);
 
   useEffect(() => {
-    const tmp = eventJoinList.sort((a: any, b: any) => b.point - a.point);
+    const tmp = eventJoinList.sort((a: Joiner, b: Joiner) => b.point - a.point);
     setUserArray(tmp);
   }, [params, eventJoinList]);
 
@@ -84,7 +89,7 @@ const EventDetailPage: FC = () => {
         </div>
       </div>
       <div className="col-lg-5 col-11 mx-auto">
-        <EventUser event={data} userArray={userArray} />
+        <EventEndCard event={data} userArray={userArray} />
         <div className="card mt-8">
           <div className="card-body w-100">
             <div className="ms-2 mb-3 fw-bold">Event URL</div>

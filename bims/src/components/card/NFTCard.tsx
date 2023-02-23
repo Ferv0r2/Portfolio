@@ -74,12 +74,12 @@ export const NFTCard: FC<Props> = ({ className, nft, mode }) => {
         >
           <div
             className={`${
-              mode ? "d-block d-md-flex" : "d-flex px-8"
+              mode ? "d-block d-md-flex" : "d-flex"
             } align-items-center`}
           >
             <div
               className={clsx(
-                "symbol me-5",
+                "symbol me-5 object-fit-contain",
                 mode ? "symbol-60px" : "symbol-45px"
               )}
             >

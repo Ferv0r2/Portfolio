@@ -1,9 +1,6 @@
-import { FC } from "react";
-
-/* Components */
 import { QuickMenu, CalendarItem, EventList } from "components/dashboard";
 
-const DashboardPage: FC = () => {
+const DashboardPage = () => {
   return (
     <>
       <div className="row gy-5 g-md-5 g-xxl-8">
@@ -19,13 +16,15 @@ const DashboardPage: FC = () => {
       </div>
 
       <div className="row gy-5 g-md-5 gx-xxl-8">
-        <div className="col-lg-10 col-xxl-4 mx-auto mx-lg-0">
+        <div className="col-md-10 col-xxl-4 mx-md-auto mx-xxl-0">
           <EventList className="card-xxl-stretch mb-xl-3" title="Live" />
         </div>
-        <div className="col-lg-10 col-xxl-4 mx-auto mx-lg-0">
+
+        <div className="col-md-10 col-xxl-4 mx-md-auto mx-xxl-0">
           <EventList className="card-xxl-stretch mb-xl-3" title="End" />
         </div>
-        <div className="col-lg-10 col-xxl-4 mx-auto mx-lg-0">
+
+        <div className="col-md-10 col-xxl-4 mx-md-auto mx-xxl-0">
           <EventList className="card-xxl-stretch mb-xl-3" title="Pending" />
         </div>
       </div>

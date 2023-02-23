@@ -6,7 +6,7 @@ import { useEvent } from "hooks/useEvent";
 
 /* Components */
 import { Empty } from "components/empty/Empty";
-import { EventCard } from "components/card/EventCard";
+import { EventCard } from "components/card";
 import { Event, KTSVG, Project } from "utils";
 
 interface Props {

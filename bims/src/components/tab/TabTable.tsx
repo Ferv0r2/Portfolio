@@ -13,7 +13,12 @@ interface Props {
   className?: string;
 }
 
-const TabTable: FC<Props> = ({ pid, totalSupply, holderCount, className }) => {
+export const TabTable: FC<Props> = ({
+  pid,
+  totalSupply,
+  holderCount,
+  className,
+}) => {
   const { onUpdate } = useToast();
   const [currentHoldersSection, setCurrentHoldersSection] = useState(0);
   const [currentHoldersPage, setCurrentHoldersPage] = useState(0);
@@ -26,7 +31,7 @@ const TabTable: FC<Props> = ({ pid, totalSupply, holderCount, className }) => {
   });
 
   useEffect(() => {
-    if (holderData.owners.length === 0) {
+    if (holderData.owners.length !== 0) {
       setHolderList(holderData);
     }
   }, []);
@@ -98,8 +103,6 @@ const TabTable: FC<Props> = ({ pid, totalSupply, holderCount, className }) => {
             list={holderList.owners}
             section={currentHoldersSection}
             page={currentHoldersPage}
-            lastSection={Math.floor(holderCount / 75)}
-            lastPage={Math.floor(holderCount / 15) % 5}
             totalSupply={totalSupply}
             prevHandler={holderPrevHandler}
             nextHandler={holderNextHandler}
@@ -110,5 +113,3 @@ const TabTable: FC<Props> = ({ pid, totalSupply, holderCount, className }) => {
     </div>
   );
 };
-
-export { TabTable };

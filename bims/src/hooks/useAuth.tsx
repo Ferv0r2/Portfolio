@@ -9,6 +9,7 @@ export const useAuth = () => {
 
   useEffect(() => {
     init();
+    // eslint-disable-next-line
   }, []);
 
   const init = useCallback(() => {

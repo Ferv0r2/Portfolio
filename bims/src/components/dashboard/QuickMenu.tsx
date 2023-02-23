@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "hooks/useToast";
-import { KTSVG } from "utils";
+import { QuickButton } from "components/button/QuickButton";
 
 interface Props {
   className: string;
@@ -11,6 +11,42 @@ interface Props {
 export const QuickMenu: FC<Props> = ({ className, balance }) => {
   const { onUpdate } = useToast();
   const navigate = useNavigate();
+
+  const onLinkedContract = () => navigate("/nft/management");
+  const onLinkedEvent = () => navigate("/event/create");
+  const onToast = () =>
+    onUpdate({
+      content: "The license is currently being prepared.",
+      type: "primary",
+    });
+  const onOpen = () => window.open("https://github.com/Ferv0r2");
+
+  const buttonData = [
+    {
+      title: "New Contract",
+      icon: "stack-fill",
+      color: "warning",
+      onClicked: onLinkedContract,
+    },
+    {
+      title: "New Event",
+      icon: "plus",
+      color: "primary",
+      onClicked: onLinkedEvent,
+    },
+    {
+      title: "License",
+      icon: "star",
+      color: "danger",
+      onClicked: onToast,
+    },
+    {
+      title: "Document",
+      icon: "paper",
+      color: "success",
+      onClicked: onOpen,
+    },
+  ];
 
   return (
     <div className={`card ${className}`}>
@@ -25,58 +61,16 @@ export const QuickMenu: FC<Props> = ({ className, balance }) => {
           </div>
         </div>
         <div className="card-p mt-n20 position-relative">
-          <div className="row g-0">
-            <button
-              type="button"
-              onClick={() => navigate("/nft/management")}
-              className="col btn btn-light-warning btn-color-warning px-6 py-8 rounded-2 m-2"
-            >
-              <KTSVG
-                path="/media/icons/stack-fill.svg"
-                className="svg-icon-3x svg-icon-warning d-block my-2"
+          <div className="row row-cols-2 rounded-2 overflow-hidden">
+            {buttonData.map((data) => (
+              <QuickButton
+                key={data.title}
+                title={data.title}
+                icon={data.icon}
+                color={data.color}
+                onClicked={data.onClicked}
               />
-              New Contract
-            </button>
-            <button
-              type="button"
-              onClick={() => navigate("/event/create")}
-              className="col btn btn-light-primary btn-color-primary px-6 py-8 rounded-2 m-2"
-            >
-              <KTSVG
-                path="/media/icons/plus.svg"
-                className="svg-icon-3x svg-icon-primary d-block my-2"
-              />
-              New Event
-            </button>
-          </div>
-          <div className="row g-0">
-            <button
-              type="button"
-              onClick={() =>
-                onUpdate({
-                  content: "The license is currently being prepared.",
-                  type: "primary",
-                })
-              }
-              className="col btn btn-light-danger btn-color-danger px-6 py-8 rounded-2 m-2"
-            >
-              <KTSVG
-                path="/media/icons/star.svg"
-                className="svg-icon-3x svg-icon-danger d-block my-2"
-              />
-              License
-            </button>
-            <button
-              type="button"
-              onClick={() => window.open("https://github.com/Ferv0r2")}
-              className="col btn btn-light-success btn-color-success px-6 py-8 rounded-2 m-2"
-            >
-              <KTSVG
-                path="/media/icons/paper.svg"
-                className="svg-icon-3x svg-icon-success d-block my-2"
-              />
-              Document
-            </button>
+            ))}
           </div>
         </div>
       </div>

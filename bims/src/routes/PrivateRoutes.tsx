@@ -15,7 +15,7 @@ import DiscordAuthPage from "pages/DiscordAuthPage";
 /* Hooks */
 import { useCollection } from "hooks/useCollection";
 
-const PrivateRoutes = () => {
+export const PrivateRoutes = () => {
   const { collections } = useCollection();
 
   return (
@@ -74,5 +74,3 @@ const PrivateRoutes = () => {
     </Routes>
   );
 };
-
-export { PrivateRoutes };
