@@ -1,16 +1,15 @@
-import { FC } from "react";
 import Head from "next/head";
 
 const metaData = {
   title: "황원태",
   siteName: "황원태",
-  description: "#Front-End #BlockChain #Web3",
+  description: "#Front-End #BlockChain #EVM #Web3",
   url: "https://wontae.site/",
   robots: "follow, index",
   image: "images/intro.png",
 };
 
-const SEO: FC = () => {
+export const SEO = () => {
   return (
     <Head>
       <title>{metaData.title}</title>
@@ -28,7 +27,6 @@ const SEO: FC = () => {
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@th_clarence" />
       <meta name="twitter:title" content={metaData.title} />
       <meta name="twitter:description" content={metaData.description} />
       <meta name="twitter:image" content={metaData.image} />
@@ -43,5 +41,3 @@ const SEO: FC = () => {
     </Head>
   );
 };
-
-export default SEO;

@@ -1,12 +1,14 @@
-import { FC, useEffect, useState, useRef } from "react";
+import React, { FC, useEffect, useState, useRef } from "react";
+import { NextPage } from "next";
 import { useTheme } from "next-themes";
 import { v1 } from "uuid";
 
 /* Componenet */
 import { Card, Section } from "components/assets";
-import { TechCard } from "components/card/TechCard";
+import { TechCard } from "components/card";
+import { techData } from "utils";
 
-const Home: FC = () => {
+const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [mounted, setMounted] = useState<boolean>(false);
@@ -14,9 +16,11 @@ const Home: FC = () => {
   useEffect(() => {
     buttonRef.current?.classList.add("animate__fadeIn");
 
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       buttonRef.current?.classList.remove("animate__fadeIn");
     }, 300);
+
+    return () => clearTimeout(timer);
   }, [theme]);
 
   const themeToggleHandler = () => {
@@ -27,11 +31,10 @@ const Home: FC = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
+
   return (
-    <main className="dark:bg-zinc-900 dark:text-zinc-100 bg-zinc-100 text-black pb-10">
+    <main className="dark:bg-zinc-900 dark:text-zinc-100 bg-zinc-50 text-black pb-10">
       <div className="relative py-4 sm:py-16 max-w-2xl lg:max-w-3xl w-11/12 sm:w-full m-auto min-h-screen font-[Vitro_core]">
         <button
           ref={buttonRef}
@@ -78,15 +81,6 @@ const Home: FC = () => {
           </div>
         </section>
         {/* end::Profile */}
-
-        {/* start::Contact */}
-        <Section title="🔎 Contact">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 p-4 sm:p-6 mt-3 dark:bg-zinc-800 dark:border-zinc-500 bg-white rounded-lg border">
-            <p>📧 E-mail : amlk31255@gmail.com</p>
-            <p>📞 Call : 010-7103-2146</p>
-          </div>
-        </Section>
-        {/* end::Contact */}
 
         {/* start::Tech */}
         <Section title="🔨Tech">
@@ -146,7 +140,7 @@ const Home: FC = () => {
                     Link -{" "}
                     <a
                       className="underline underline-offset-2 hover:text-indigo-600"
-                      href="https://bims.metaoneer.club/"
+                      href="https://bims.wontae.site/"
                       target="_blank"
                     >
                       Website
@@ -327,28 +321,3 @@ const Home: FC = () => {
 };
 
 export default Home;
-
-const techData = [
-  {
-    lang: "TypeScript",
-    content: [
-      "I understand asynchronous processing such as 'await/async' and 'Promise'.",
-      "I have experience in deploying web services using the React framework.",
-      "I have experience interacting with the blockchain backend using libraries such as 'web3', 'ethers', and 'caver-js'.",
-    ],
-  },
-  {
-    lang: "Python",
-    content: [
-      "It is easy to implement the function by referring to the reference.",
-      "I can troubleshoot basic algorithm problems.",
-    ],
-  },
-  {
-    lang: "Solidity",
-    content: [
-      "Code writing based on smart contract standards such as ERC-20, ERC-721, and ERC-1155 is possible.",
-      "Smart contract distribution using hardhat, trouble, Remix, etc. and interaction between multiple contracts are possible.",
-    ],
-  },
-];

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 
 interface Props {
   className?: string;
@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Section: FC<Props> = ({ className, title, children }) => {
+export const Section: FC<Props> = ({ className, title, children }) => {
   return (
     <section className={`${className} pb-8`}>
       <h2 className="text-lg font-[GmarketSansBold]">{title}</h2>
@@ -14,5 +14,3 @@ const Section: FC<Props> = ({ className, title, children }) => {
     </section>
   );
 };
-
-export { Section };

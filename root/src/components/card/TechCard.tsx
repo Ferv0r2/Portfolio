@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { v1 } from "uuid";
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   content: string[];
 }
 
-const TechCard: FC<Props> = ({ lang, content }) => {
+export const TechCard: FC<Props> = ({ lang, content }) => {
   return (
     <div className="pb-4">
       <div className="inline-flex items-center dark:bg-zinc-800 dark:border-zinc-500 bg-white px-3 py-2 rounded-lg rounded-b-none border border-b-0">
@@ -28,5 +28,3 @@ const TechCard: FC<Props> = ({ lang, content }) => {
     </div>
   );
 };
-
-export { TechCard };
