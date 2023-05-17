@@ -1,12 +1,12 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 const metaData = {
-  title: "황원태",
-  siteName: "황원태",
-  description: "#Front-End #BlockChain #EVM #Web3",
-  url: "https://wontae.site/",
-  robots: "follow, index",
-  image: "images/intro.png",
+  title: '황원태',
+  siteName: '황원태',
+  description: '#Front-End #dev',
+  url: 'https://wontae.site/',
+  robots: 'follow, index',
+  image: 'images/intro.png',
 };
 
 export const SEO = () => {

@@ -1,12 +1,10 @@
-import React, { FC, useEffect, useState, useRef } from "react";
-import { NextPage } from "next";
-import { useTheme } from "next-themes";
-import { v1 } from "uuid";
+import React, { useEffect, useState, useRef } from 'react';
+import { NextPage } from 'next';
+import { useTheme } from 'next-themes';
 
 /* Componenet */
-import { Card, Section } from "components/assets";
-import { TechCard } from "components/card";
-import { techData } from "utils";
+import { Card, Section } from 'components';
+import { AutoImage, AutoSVG } from 'utils';
 
 const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
@@ -14,17 +12,17 @@ const Home: NextPage = () => {
   const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    buttonRef.current?.classList.add("animate__fadeIn");
+    buttonRef.current?.classList.add('animate__fadeIn');
 
     const timer = setTimeout(() => {
-      buttonRef.current?.classList.remove("animate__fadeIn");
+      buttonRef.current?.classList.remove('animate__fadeIn');
     }, 300);
 
     return () => clearTimeout(timer);
   }, [theme]);
 
   const themeToggleHandler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    theme === 'light' ? setTheme('dark') : setTheme('light');
   };
 
   useEffect(() => {
@@ -41,15 +39,15 @@ const Home: NextPage = () => {
           className="absolute rounded-lg border dark:border-zinc-500 py-2 px-4 top-4 right-0 animate__animated animate__faster font-semibold hover:text-indigo-600 dark:bg-zinc-800 bg-white"
           onClick={themeToggleHandler}
         >
-          {theme === "light" ? "Light 🌞" : "Dark 🌙"}
+          {theme === 'light' ? 'Light 🌞' : 'Dark 🌙'}
         </button>
 
         {/* start::Profile */}
         <section className="w-11/12 sm:w-full m-auto pb-12 sm:pb-8">
           <div className="block sm:flex py-0 sm:py-4 items-center">
             <div className="w-40 mr-12 rounded-lg shadow border dark:border-zinc-500 overflow-hidden">
-              <div className="relative w-40">
-                <img className="" src="images/logo.jpg" alt="logo" />
+              <div className="relative w-40 h-40">
+                <AutoImage src="/images/logo.jpg" alt="logo" />
               </div>
               <div className="bg-white rounded-b-lg dark:bg-zinc-800 p-1 flex justify-center">
                 <a
@@ -58,11 +56,7 @@ const Home: NextPage = () => {
                   rel="noreferrer"
                   href="https://github.com/Ferv0r2"
                 >
-                  <img
-                    className="inline w-6 mr-2"
-                    src="images/github.svg"
-                    alt="Github"
-                  />
+                  <AutoSVG className="w-6 mr-2" src="/images/github.svg" />
                   Github
                 </a>
               </div>
@@ -74,7 +68,7 @@ const Home: NextPage = () => {
               </h2>
               <div className="dark:bg-zinc-800 dark:border-zinc-500 bg-white rounded-lg border p-4 mt-4">
                 <code className="text-sm sm:text-base">
-                  I'm a developer who can communicate on a large scale. 😊
+                  I{`'`}m a developer who can communicate on a large scale. 😊
                 </code>
               </div>
             </div>
@@ -82,62 +76,22 @@ const Home: NextPage = () => {
         </section>
         {/* end::Profile */}
 
-        {/* start::Tech */}
-        <Section title="🔨Tech">
-          <div className="mt-3">
-            {techData.map((v) => (
-              <TechCard key={v1()} lang={v.lang} content={v.content} />
-            ))}
-          </div>
-        </Section>
-        {/* end::Tech */}
-
         {/* start::Project */}
         <Section title="📌 Project">
           <div className="px-6 sm:px-8 py-4 sm:py-6 dark:bg-zinc-800 dark:border-zinc-500 bg-white mt-3 rounded-lg border">
             <div className="pb-4">
               <div className="block sm:flex items-center">
                 <h3 className="text-lg font-semibold">
-                  On-Chain Project Funding Solution
-                </h3>
-                <h4 className="ml-0 sm:ml-4 text-sm">2022.11 ~ 2022.12</h4>
-              </div>
-              <div className="leading-8">
-                <div className="py-4 text-sm">
-                  <p>Language - TypeScript</p>
-                  <p>Framework - ReactJS NextJS, TailwindCSS</p>
-                  <p>
-                    Link -{" "}
-                    <a
-                      className="underline underline-offset-2 hover:text-indigo-600"
-                      href="http://nfps.metaoneer.club.s3-website.ap-northeast-2.amazonaws.com/"
-                      target="_blank"
-                    >
-                      Website
-                    </a>
-                  </p>
-                </div>
-                <Card className="dark:bg-zinc-800 bg-zinc-50">
-                  It is a service that combines cloud funding and distributed
-                  organization DAO, and sponsors can manage the project through
-                  voting depending on the milestone, which is the progress of
-                  the project.
-                </Card>
-              </div>
-            </div>
-            <div className="py-4">
-              <div className="block sm:flex items-center">
-                <h3 className="text-lg font-semibold">
                   Blockchain Integrated Marketing System in Klaytn
                 </h3>
-                <h4 className="ml-0 sm:ml-4 text-sm">2022.10 ~ 2022.12</h4>
+                <h4 className="ml-0 sm:ml-4 text-sm">2022.08 ~ 2023.01</h4>
               </div>
               <div className="leading-8">
                 <div className="py-4 text-sm">
                   <p>Language - TypeScript</p>
                   <p>Framework - ReactJS, BootStrap</p>
                   <p>
-                    Link -{" "}
+                    Link -{' '}
                     <a
                       className="underline underline-offset-2 hover:text-indigo-600"
                       href="https://bims.wontae.site/"
@@ -160,14 +114,14 @@ const Home: NextPage = () => {
                 <h3 className="text-lg font-semibold">
                   Web3 Payment Module in Binance
                 </h3>
-                <h4 className="ml-0 sm:ml-4 text-sm">2022.08 ~ 2022.10</h4>
+                <h4 className="ml-0 sm:ml-4 text-sm">2022.11 ~ 2022.12</h4>
               </div>
               <div className="leading-8">
                 <div className="py-4 text-sm">
                   <p>Language - TypeScript, Solidity</p>
                   <p>Framework - ReactJS, NextJS, Styled-Components</p>
                   <p>
-                    Link -{" "}
+                    Link -{' '}
                     <a
                       className="underline underline-offset-2 hover:text-indigo-600"
                       href="https://www.npmjs.com/package/metaoneer-payment"
@@ -186,14 +140,14 @@ const Home: NextPage = () => {
             <div className="py-4">
               <div className="block sm:flex items-center">
                 <h3 className="text-lg font-semibold">NFT Project in Klaytn</h3>
-                <h4 className="ml-0 sm:ml-4 text-sm">2021.10 ~ 2022.06</h4>
+                <h4 className="ml-0 sm:ml-4 text-sm">2021.11 ~ 2022.06</h4>
               </div>
               <div className="leading-8">
                 <div className="py-4 text-sm">
                   <p>Language - JavaScript, Solidity, Python</p>
                   <p>Framework - ReactJS, NextJS, TailwindCSS</p>
                   <p>
-                    Link -{" "}
+                    Link -{' '}
                     <a
                       className="underline underline-offset-2 hover:text-indigo-600"
                       href="https://opensea.io/collection/kepler-452b-official"
@@ -231,7 +185,7 @@ const Home: NextPage = () => {
                   <p>Language - Java, Android</p>
                   <p>Database - Firebase</p>
                   <p>
-                    Link -{" "}
+                    Link -{' '}
                     <a
                       className="underline underline-offset-2 hover:text-indigo-600"
                       href="https://www.youtube.com/watch?v=xczP9YPL5qQ"
@@ -251,7 +205,7 @@ const Home: NextPage = () => {
                   We developed location tracking and sharing services and
                   foreground functions through GPS.
                   <br></br>Through this course, I understood the concept of the
-                  app's access rights and policies and the life cycle of the
+                  app{`'`}s access rights and policies and the life cycle of the
                   app.
                 </Card>
               </div>
@@ -268,7 +222,7 @@ const Home: NextPage = () => {
                 Department of IT Software at Shingu University
               </h3>
               <h4 className="ml-0 sm:ml-4 text-sm">
-                2017.03 - 2023.02 (Bachelor's degree expected)
+                2017.03 - 2023.02 (Bachelor{`'`}s degree expected)
               </h4>
             </div>
           </div>

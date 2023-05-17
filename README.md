@@ -1,23 +1,29 @@
 # Portfolio
 
-- Web3 관련하여 개발을 진행해 왔으며 해당 결과물들을 조회할 수 있도록 Wallet의 의존성을 제거하고 포트폴리오를 확인할 수 있도록 수정합니다.
-- 현재는 Web3에 국한된 것이 아닌 React-Native 기술을 체득하여 Web/App을 불문하고 개발할 수 있는 프론트엔드 개발자를 목표합니다.
+프론트엔드 분야를 좋아하는 개발자입니다.
+ReactJS 프레임워크를 TypeScript로 작성하고 Bootstrap과 TailwindCSS로 프로덕트를 개발합니다.
+상태 관리 라이브러리 recoil과 Custom hooks을 활용해 코드 관리를 용이하게 합니다.
+RESTful API를 통해 비동기 통신을 진행합니다.
+Solidity로 표준에 맞는 스마트컨트랙트를 작성할 수 있습니다.
+
+- https://wontae.site
 
 ## BIMS ( Blockchain Integrated Management Service )
 
+> ReactJS, TypeScript, Bootstrap, SCSS, AWS S3, AWS CloudFront, AWS Route 53
+
 - 블록체인 내의 NFT를 통합관리할 수 있는 서비스입니다.
 - 개별 NFT 홀더 수 조회, 이벤트 생성을 통한 마케팅 서비스 등이 지원되며 개별 페이지를 제공합니다.
-- 현재 Wallet 분리작업 및 리팩토링 중에 있으며 업데이트 이후 `https://bims.wontae.site`에 업로드될 예정입니다.
-- 기존의 Wallet을 이용한 실제 페이지는 `https://bims.metaoneer.club`에서 확인 가능합니다. ( 지원 체인 : 1001, 8217 )
+- https://bims.wontae.site
 
 ## NFPS ( NFT Funding Payment Service )
 
 - 기존 클라우드 펀딩 서비스에서 스마트 컨트랙트를 융합한 Web3 펀딩 페이지입니다.
 - 펀딩을 생성하고 각 단계별로 DAO 시스템을 통해 투표하고 프로젝트 진행 여부를 투자자가 판단할 수 있게 합니다.
-- BIMS 작업 이후 Wallet 분리작업이 진행될 예정이며 업데이트 이후 `https://nfps.wontae.site`에 업로드될 예정입니다.
-- 기존 실제 페이지는 API가 중단되어 메인 및 탭 화면만 조회가 가능합니다. `http://nfps.metaoneer.club.s3-website.ap-northeast-2.amazonaws.com/` ( 지원 체인 : 56, 97 )
 
 ## Payment Module
+
+> TypeScript, Solidity, Babel, Webpack
 
 - 스마트 컨트랙트를 다루지 않더라도 결제 시스템을 도입할 수 있는 모듈입니다.
 - npm 홈페이지를 통해 확인할 수 있습니다. `https://www.npmjs.com/package/metaoneer-payment`

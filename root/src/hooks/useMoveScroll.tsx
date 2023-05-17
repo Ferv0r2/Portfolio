@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import { useRecoilState } from "recoil";
-import { scrollActiveState, scrollState } from "stores/states";
+import React, { useRef } from 'react';
+import { useRecoilState } from 'recoil';
+import { scrollActiveState, scrollState } from 'stores/states';
 
 export const useMoveScroll = () => {
   const element = useRef<HTMLDivElement>(null);
@@ -8,10 +8,8 @@ export const useMoveScroll = () => {
   const [scrollActive, setScrollActive] = useRecoilState(scrollActiveState);
 
   const onMoveToElement = () => {
-    element.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    element.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
-
-  console.log(scrollY);
 
   const onScroll = () => {
     setScrollY(window.scrollY);

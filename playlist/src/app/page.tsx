@@ -2,7 +2,7 @@
 
 import { AlbumCard } from "@/components/AlbumCard";
 import { MasterLayout } from "@/layout";
-0;
+
 export default function Home() {
   return (
     <MasterLayout>

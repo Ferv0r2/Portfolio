@@ -2,7 +2,7 @@
   "globals": {
     "window": true
   },
-  "extends": ["next/core-web-vitals", "airbnb", "prettier"],
+  "extends": ["next/core-web-vitals", "prettier"],
   "rules": {
     "no-undef": "off",
     "arrow-parens": ["error", "always"],
