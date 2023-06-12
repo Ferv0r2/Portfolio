@@ -1,12 +1,40 @@
 # Portfolio
 
-프론트엔드 분야를 좋아하는 개발자입니다.
-ReactJS 프레임워크를 TypeScript로 작성하고 Bootstrap과 TailwindCSS로 프로덕트를 개발합니다.
-상태 관리 라이브러리 recoil과 Custom hooks을 활용해 코드 관리를 용이하게 합니다.
-RESTful API를 통해 비동기 통신을 진행합니다.
-Solidity로 표준에 맞는 스마트컨트랙트를 작성할 수 있습니다.
+## Intro
 
-- https://wontae.site
+> 성취감에 진심인 개발자 황원태입니다.
+
+개발은 항상 새로운 도전과 지속적인 학습의 기회를 제공합니다. 기술은 계속해서 발전되고 변화하기 때문에 새로운 과제는 끊임없이 생겨날 것이며 이를 통해 발전할 수 있는 기회가 제공된다고 생각합니다.
+
+- RESTful API를 통해 비동기 통신을 진행합니다.
+- TypeScript와 React를 사용하는 Front-end 중심의 JavaScript ES6+ 개발 경험
+- Custom Hook 및 상태 관리 라이브러리 recoil을 활용한 코드 관리 경험
+- Bootstrap, TailwindCSS, styled-components 등 다양한 CSS 라이브러리 적용 경험
+- AWS의 S3, Route 53, CloudFront를  활용한 정적페이지 배포 경험
+- 실시간 채팅방 내에서 1,000명 이상의 사용자 피드백을 수용한 커뮤니케이션 경험
+
+## Kepler-452b - 수정 진행중
+
+- 포트폴리오 리팩토링 전
+
+  > ReactJS, JavaScript, CSS, Git-Pages
+
+- 포트폴리오 리팩토링 후
+  > NextJS, TypeScript, TailwindCSS, AWS S3, AWS CloudFront, AWS Route 53
+- Klaytn 체인에서 진행한 NFT 프로젝트입니다.
+- 날씨에 따라 이미지가 생장하는 우주 식물을 컨텐츠로 진행하였습니다.
+- openCV 라이브러리를 활용하여 Generative Art 생성 로직 개발하였습니다.
+- BlockChain Transaction API를 통해 NFT metadata 업데이트하였습니다.
+
+- Link
+
+  > [Main - 컨텐츠 이용 페이지](https://kepler.wontae.site) // 수정 진행중
+
+  > [Docs - 프로젝트 소개 문서](https://docs.kepler.wontae.site/)
+
+  > [Medium - 프로젝트 관련 블로그](https://medium.com/@Kepler-452b)
+
+  > [OpenSea - 오픈 마켓](https://opensea.io/collection/kepler-452b-official)
 
 ## BIMS ( Blockchain Integrated Management Service )
 

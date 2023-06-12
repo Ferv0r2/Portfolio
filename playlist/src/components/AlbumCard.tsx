@@ -1,12 +1,27 @@
 import React from "react";
+import { v1 } from "uuid";
+import { AutoImage, AutoSVG } from "@/utils";
 
-export const AlbumCard = () => {
+interface Props {
+  img: string;
+  title: string;
+  keyword: string[];
+}
+
+export const AlbumCard = ({ img, title, keyword }: Props) => {
   return (
-    <div className="group px-4 py-8 cursor-pointer transform hover:translate-x-2 hover:translate-y-2 hover:shadow-lg hover:shadow-orange-600 border border-slate-300 hover:border-orange-500 rounded-lg">
-      <div className="w-64 h-64 mx-auto bg-slate-500 group-hover:bg-orange-300"></div>
-      <div className="px-8 py-4">
-        <h2 className="text-slate-300">Test</h2>
-        <p className="pt-2 text-gray-400">#BlockChain #Platform</p>
+    <div className="group cursor-pointer">
+      <figure className="relative w-64 h-64 rounded-lg overflow-hidden">
+        <AutoImage src={`/media/img/${img}.png`} alt={title} />
+        <div className="absolute w-64 h-64 bg-black opacity-0 transition-opacity group-hover:opacity-50 duration-300" />
+      </figure>
+      <div className="py-4">
+        <h2 className="text-slate-300 font-bold text-lg">{title}</h2>
+        <p className="pt-2 text-gray-400">
+          {keyword.map((v) => (
+            <label key={v1()}>#{v} </label>
+          ))}
+        </p>
       </div>
     </div>
   );

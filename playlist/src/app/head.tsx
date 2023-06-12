@@ -8,6 +8,10 @@ export default function Head() {
 
       <link rel="shortcut icon" href="/media/favicon.ico" />
       <link rel="canonical" href="https://wontae.site" />
+      <link
+        href="https://webfontworld.github.io/gmarket/GmarketSans.css"
+        rel="stylesheet"
+      />
       <meta name="author" content="wontae" />
       <meta name="keywords" content="#portfolio #interactive #playlist" />
       <meta name="application-name" content="FOLIO_PLAYER" />

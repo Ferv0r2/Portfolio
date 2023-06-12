@@ -6,10 +6,10 @@ export const Header = () => {
     <header className="p-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <figure className="relative w-12 h-12">
+          <figure className="relative w-10 h-10">
             <AutoImage src="/media/logos/main-logo.png" alt="logo" />
           </figure>
-          <h2 className="ml-2 font-bold text-lg text-white">Folio Player</h2>
+          <h2 className="ml-1 font-bold text-xl text-white">Folio Player</h2>
         </div>
         <a
           className="group"
