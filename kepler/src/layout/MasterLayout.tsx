@@ -1,12 +1,16 @@
 import { ReactNode, useEffect } from "react";
 import { Header, Footer, ScrollTop } from "@/layout";
-import { useScroll } from "@/hooks/useScroll";
-import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
-import { bgState, accountState, balanceState } from "@/stores";
+import useScroll from "@/hooks/useScroll";
+import { useRecoilValue } from "recoil";
+import { accountState } from "@/stores";
 
-export const MasterLayout = ({ children }: { children: ReactNode }) => {
-  const bg = useRecoilValue(bgState);
-  const [account, setAccount] = useRecoilState(accountState);
+interface Props {
+  bgType: string;
+  children: ReactNode;
+}
+
+export const MasterLayout = ({ bgType, children }: Props) => {
+  const account = useRecoilValue(accountState);
   const { scrollActive, onScroll } = useScroll();
 
   useEffect(() => {
@@ -21,8 +25,8 @@ export const MasterLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <>
-      <div className={bg}>
-        <Header address={account} />
+      <div className={bgType}>
+        <Header address={account.account} />
         {children}
         <Footer />
       </div>

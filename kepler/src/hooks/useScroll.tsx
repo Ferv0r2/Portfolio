@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useScroll = () => {
+export default function useScroll() {
   const [scrollY, setScrollY] = useState<number>(0);
   const [scrollActive, setScrollActive] = useState<boolean>(false);
 
@@ -14,4 +14,4 @@ export const useScroll = () => {
   };
 
   return { scrollActive, onScroll };
-};
+}

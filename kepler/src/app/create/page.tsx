@@ -79,7 +79,7 @@ const Create = () => {
           </div>
           <div className="w-11/12 p-4 pb-16 m-auto">
             <p className="font-bold py-5 text-2xl">Proposer</p>
-            <p className="font-base">{account}</p>
+            <p className="font-base">{account.account}</p>
           </div>
 
           <div className="p-16 border-t-2">

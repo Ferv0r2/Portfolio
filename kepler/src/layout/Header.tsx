@@ -17,27 +17,16 @@ export const Header = ({ address }: Props) => {
           </figure>
           <p className="block mx-3 m-auto font-bold text-3xl">Kepler-452b</p>
         </Link>
-        {address ? (
-          <div className="hidden md:block">
-            <div className="flex">
-              <figure className="relative h-7 w-7">
-                <AutoImage src="/media/logos/klaytn_logo.png" alt="chain" />
-              </figure>
-              <p className="block w-40 m-auto mx-1.5 font-medium text-base text-ellipsis overflow-hidden">
-                {replaceAddress(address)}
-              </p>
-            </div>
+        <div className="hidden md:block">
+          <div className="flex">
+            <figure className="relative h-7 w-7">
+              <AutoImage src="/media/logos/klaytn_logo.png" alt="chain" />
+            </figure>
+            <p className="block w-40 m-auto mx-1.5 font-medium text-base text-ellipsis overflow-hidden">
+              {replaceAddress(address)}
+            </p>
           </div>
-        ) : (
-          <div className="hidden md:block">
-            <div className="flex">
-              <figure className="relative flex w-7 h-7 animate-spin">
-                <AutoImage src="/media/icons/loading.png" alt="loading" />
-              </figure>
-              <p className="mx-1.5 m-auto text-sm">Login with Kaikas</p>
-            </div>
-          </div>
-        )}
+        </div>
       </div>
     </header>
   );

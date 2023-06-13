@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const ShopKey = ({ id, inputs, nums, setOpen }: Props) => {
-  const key = ["normal_key", "rare_key", "unique_key"];
+  const rank = ["normal", "rare", "unique"];
 
   const data = [...Array(id + 1)].map((v, i) => {
     return (
@@ -30,11 +30,11 @@ export const ShopKey = ({ id, inputs, nums, setOpen }: Props) => {
         <li className="w-2/12 m-auto">
           <img
             className="w-10/12 sm:w-1/2 m-auto"
-            src="images/shop/after.png"
+            src="media/icons/after.png"
           />
         </li>
         <li className="w-3/12 sm:w-2/12 m-auto bg-shopItem rounded-2xl">
-          <img src={`images/shop/${key[id]}.png`} />
+          <img src={`media/items/${rank[id]}_key.png`} />
         </li>
         <div
           className="hidden sm:block w-4/12 m-auto text-2xl cursor-pointer hover:text-shopItem"

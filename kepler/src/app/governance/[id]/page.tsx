@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { NFTBox } from "@/components/NFTBox";
 import { web3, nftContract, govContract } from "@/blockchain";
-import { accountState, balanceState } from "@/stores";
+import { accountState } from "@/stores";
 import { v1 } from "uuid";
 
 interface IProposal {
@@ -21,8 +21,6 @@ interface IVote {
 
 export const Proposal = () => {
   const account = useRecoilValue(accountState);
-  const balance = useRecoilValue(balanceState);
-  const [isLoading, setLoading] = useState(true);
   const [status, setStatus] = useState(0);
   const [proposal, setProposal] = useState<IProposal>({
     title: "",
@@ -95,7 +93,7 @@ export const Proposal = () => {
         </div>
         <div className="Proposal__proposer">
           <h2 className="sub_title">작성자</h2>
-          <p>{account}</p>
+          <p>{account.account}</p>
         </div>
         <div className="Proposal__detail">
           <h2 className="sub_title">세부 내용</h2>
@@ -116,7 +114,7 @@ export const Proposal = () => {
         <div className="Vote__nft">
           <h2 className="sub_title">MY NFT</h2>
           <div className="nft__count">
-            <p>수량: {balance}개</p>
+            <p>수량: {account.balance}개</p>
           </div>
           <div className="nft">
             {tkURI.length != 0 ? (

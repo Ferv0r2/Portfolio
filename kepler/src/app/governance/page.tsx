@@ -3,29 +3,22 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { govContract } from "@/blockchain";
-import { Loading } from "@/components/Loading";
 
 import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
-import { bgState, accountState, proposalState } from "@/stores";
+import { accountState } from "@/stores";
 
 const Governance = () => {
-  const setBg = useSetRecoilState(bgState);
   const account = useRecoilValue(accountState);
-  const [proposalArray, setProposals] = useRecoilState(proposalState);
+  const [proposalArray, setProposals] = useState<string[]>([]);
   const [section, setSection] = useState(0);
   const [status, setStatus] = useState(0);
-  const [isLoading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setBg("bg-govBg");
-  }, []);
 
   return (
     <div className="max-w-4xl m-auto min-h-screen text-white text-center font-GmarketSansMedium">
       <div className="relative">
         <img
           className="w-11/12 sm:w-10/12 m-auto"
-          src="images/governance/gove_icon.png"
+          src="media/icons/gov_icon.png"
         />
         <div className="absolute italic text-shadow-purple text-center font-bold transform top-16 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <p className="text-3xl py-3">Kepler-452b</p>
@@ -72,14 +65,14 @@ const Governance = () => {
           <span className="w-1/4 cursor-pointer" onClick={() => {}}>
             <img
               className="w-1/2 rounded-md p-1 m-auto"
-              src="images/governance/prev.png"
+              src="media/icons/gov_prev.png"
             />
           </span>
           <p className="w-1/2 text-xl">{section + 1}</p>
           <span className="w-1/4 cursor-pointer" onClick={() => {}}>
             <img
               className="w-1/2 rounded-md p-1 m-auto"
-              src="images/governance/next.png"
+              src="media/icons/gov_next.png"
             />
           </span>
         </div>

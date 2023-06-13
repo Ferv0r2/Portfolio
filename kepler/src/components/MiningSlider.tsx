@@ -1,20 +1,14 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Slider from "react-slick";
+import { v1 } from "uuid";
 
-import { useSetRecoilState } from "recoil";
-import { pickIdState } from "@/stores";
+interface Props {
+  setPick: Dispatch<SetStateAction<number>>;
+}
 
-export const MiningSlider = () => {
-  const setPickId = useSetRecoilState(pickIdState);
-
-  const CustomPrevArrow = ({
-    onClick,
-    currentSlide,
-  }: {
-    onClick: () => void;
-    currentSlide: number;
-  }) => {
-    setPickId(currentSlide);
+export const MiningSlider = ({ setPick }: Props) => {
+  const CustomPrevArrow = ({ onClick, currentSlide }: any) => {
+    setPick(currentSlide);
     return (
       <div
         className="absolute sm:top-48 sm:-left-16 bottom-0 left-8 w-8 h-8 cursor-pointer z-0"
@@ -22,19 +16,13 @@ export const MiningSlider = () => {
           onClick();
         }}
       >
-        <img src="images/mining/prev.png" />
+        <img src="media/icons/mining_prev.png" />
       </div>
     );
   };
 
-  const CustomNextArrow = ({
-    onClick,
-    currentSlide,
-  }: {
-    onClick: () => void;
-    currentSlide: number;
-  }) => {
-    setPickId(currentSlide);
+  const CustomNextArrow = ({ onClick, currentSlide }: any) => {
+    setPick(currentSlide);
     return (
       <div
         className="absolute sm:top-48 sm:-right-16 bottom-0 right-8 w-8 h-8 cursor-pointer z-0"
@@ -42,7 +30,7 @@ export const MiningSlider = () => {
           onClick();
         }}
       >
-        <img src="images/mining/next.png" />
+        <img src="media/icons/mining_next.png" />
       </div>
     );
   };
@@ -53,32 +41,23 @@ export const MiningSlider = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <CustomNextArrow onClick={() => {}} currentSlide={0} />,
-    prevArrow: <CustomPrevArrow onClick={() => {}} currentSlide={0} />,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
   };
+
+  const rank = ["하", "중", "상"];
+
   return (
     <div className="w-full md:w-6/12 sm:w-8/12 m-auto text-2xl sm:text-3xl text-box_text text-center font-GmarketSansBold">
       <Slider {...settings}>
-        <div>
-          <div className="relative w-108 h-108 m-auto">
-            <img src="images/items/1PK.png" alt="Normal" />
-          </div>
-          <p className="text-shadow">하급 곡괭이</p>
-        </div>
-        <div>
-          <div className="relative w-108 h-108 m-auto">
-            <img src="images/items/2PK.png" alt="Rare" />
-          </div>
-          <p className="text-shadow">중급 곡괭이</p>
-        </div>
-        <div>
-          <div>
+        {rank.map((v, i) => (
+          <div key={v1()}>
             <div className="relative w-108 h-108 m-auto">
-              <img src="images/items/3PK.png" alt="Unique" />
+              <img src={`media/items/${i + 1}PK.png`} alt={v} />
             </div>
-            <p className="text-shadow">상급 곡괭이</p>
+            <p className="text-shadow">{v}급 곡괭이</p>
           </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );
