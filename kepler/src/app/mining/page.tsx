@@ -72,13 +72,13 @@ export default function Mining() {
 
   return (
     <MasterLayout bgType="bg-miningBg">
-      <div className="max-w-4xl m-auto min-h-screen text-white text-center font-GmarketSansMedium">
+      <div className="max-w-4xl mx-auto min-h-screen text-white text-center font-GmarketSansMedium">
         <img
-          className="w-full sm:w-10/12 m-auto"
+          className="w-full sm:w-10/12 mx-auto"
           src="media/banners/mining_banner.png"
         />
         <img
-          className="w-11/12 sm:w-8/12 -mt-5 m-auto"
+          className="w-11/12 sm:w-8/12 -mt-5 mx-auto"
           src="media/video/mining.png"
         />
 
@@ -90,7 +90,7 @@ export default function Mining() {
             close={closeModal}
           />
         )}
-        <div className="py-8 w-40 m-auto">
+        <div className="py-8 w-40 mx-auto">
           <div
             className="rounded-2xl py-3 text-lg font-GmarketSansBold cursor-pointer  bg-miningBtnBg hover:bg-miningBtnHover"
             onClick={sendTxItem}

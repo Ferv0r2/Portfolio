@@ -1,5 +1,5 @@
 import { ReactNode, useEffect } from "react";
-import { Header, Footer, ScrollTop } from "@/layout";
+import { SEO, Header, Footer, ScrollTop } from "@/layout";
 import useScroll from "@/hooks/useScroll";
 import { useRecoilValue } from "recoil";
 import { accountState } from "@/stores";
@@ -25,6 +25,7 @@ export const MasterLayout = ({ bgType, children }: Props) => {
 
   return (
     <>
+      <SEO />
       <div className={bgType}>
         <Header address={account.account} />
         {children}

@@ -16,7 +16,7 @@ export const MiningModal = ({ pickId, stone, stoneCnt, close }: Props) => {
 
   return (
     <div className="fixed top-0 right-0 bottom-0 left-0 bg-black bg-opacity-70 z-10">
-      <div className="absolute bg-miningBg top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10/12 sm:w-8/12 lg:w-4/12 min-h-halfScreen m-auto p-2 rounded-md animation-fill-forwards animate-miningFlicker">
+      <div className="absolute bg-miningBg top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10/12 sm:w-8/12 lg:w-4/12 min-h-halfScreen mx-auto p-2 rounded-md animation-fill-forwards animate-miningFlicker">
         <div className="relative font-GmarketSansMedium pt-16">
           <div
             className="absolute top-5 right-6 text-xl transform cursor-pointer hover:scale-125"
@@ -29,7 +29,7 @@ export const MiningModal = ({ pickId, stone, stoneCnt, close }: Props) => {
               muted
               autoPlay
               poster={`media/video/mining.png`}
-              className="w-10/12 pt-20 m-auto"
+              className="w-10/12 pt-20 mx-auto"
             >
               <source src={`media/video/mining_${rank[pickId]}.mov`} />
             </video>
@@ -100,7 +100,7 @@ export const MiningModal = ({ pickId, stone, stoneCnt, close }: Props) => {
             </div>
             <div className="pt-8 text-center">
               <button
-                className="bg-miningBtnBg text-white w-24 m-auto mb-8 p-2 text-xl rounded-xl hover:text-miningBtnBg hover:bg-white"
+                className="bg-miningBtnBg text-white w-24 mx-auto mb-8 p-2 text-xl rounded-xl hover:text-miningBtnBg hover:bg-white"
                 onClick={close}
               >
                 확인

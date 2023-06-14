@@ -10,7 +10,7 @@ import { evolData } from "@/utils";
 
 const Evolution = () => {
   return (
-    <div className="max-w-4xl m-auto min-h-screen text-white text-center font-GmarketSansMedium">
+    <div className="max-w-4xl mx-auto min-h-screen text-white text-center font-GmarketSansMedium">
       {/* <EvolTableOfNum date={evol.date} tokenData={evol.token} /> */}
     </div>
   );

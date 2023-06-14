@@ -30,8 +30,8 @@ const Create = () => {
   };
 
   return (
-    <div className="max-w-4xl m-auto pb-20">
-      <div className="mt-10 p-10 m-auto rounded-md text-gray-800 text-center">
+    <div className="max-w-4xl mx-auto pb-20">
+      <div className="mt-10 p-10 mx-auto rounded-md text-gray-800 text-center">
         <div className="relative p-4 mb-10 border-b-4 border-gray-800">
           <p className="font-serif text-5xl ">Create Proposal</p>
           <Link href="/">
@@ -41,8 +41,8 @@ const Create = () => {
           </Link>
         </div>
         <form>
-          <div className="flex w-full m-auto rounded-md">
-            <div className="w-7/12 p-4 m-auto">
+          <div className="flex w-full mx-auto rounded-md">
+            <div className="w-7/12 p-4 mx-auto">
               <p className="p-2 font-bold text-xl">Title</p>
               <input
                 type="text"
@@ -51,7 +51,7 @@ const Create = () => {
                 placeholder="Sample Title"
               />
             </div>
-            <div className="w-5/12 p-4 m-auto">
+            <div className="w-5/12 p-4 mx-auto">
               <p className="p-2 font-bold text-xl">Period</p>
               <input
                 type="text"
@@ -61,7 +61,7 @@ const Create = () => {
               />
             </div>
           </div>
-          <div className="w-11/12 p-4 m-auto">
+          <div className="w-11/12 p-4 mx-auto">
             <p className="font-bold py-5 text-2xl">Contents</p>
             <textarea
               className="p-2 w-full min-h-md rounded-md"
@@ -69,7 +69,7 @@ const Create = () => {
               placeholder="Sample Contents"
             />
           </div>
-          <div className="w-11/12 p-4 m-auto">
+          <div className="w-11/12 p-4 mx-auto">
             <p className="font-bold py-5 text-2xl">Summary</p>
             <textarea
               className="p-2 w-full min-h-sm rounded-md"
@@ -77,7 +77,7 @@ const Create = () => {
               placeholder="Sample Summary"
             />
           </div>
-          <div className="w-11/12 p-4 pb-16 m-auto">
+          <div className="w-11/12 p-4 pb-16 mx-auto">
             <p className="font-bold py-5 text-2xl">Proposer</p>
             <p className="font-base">{account.account}</p>
           </div>
@@ -85,7 +85,7 @@ const Create = () => {
           <div className="p-16 border-t-2">
             <button
               type="submit"
-              className="w-48 m-auto text-2xl border-2 border-black rounded-md text-center font-bold px-4 py-3 cursor-pointer hover:bg-black hover:text-light"
+              className="w-48 mx-auto text-2xl border-2 border-black rounded-md text-center font-bold px-4 py-3 cursor-pointer hover:bg-black hover:text-light"
             >
               Submit
             </button>

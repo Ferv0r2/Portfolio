@@ -51,11 +51,11 @@ export const BoxSlider = ({ setBoxId }: Props) => {
   const rank = ["Normal", "Rare", "Unique"];
 
   return (
-    <div className="w-full md:w-6/12 sm:w-8/12 m-auto text-2xl sm:text-3xl text-box_text text-center font-GmarketSansBold italic">
+    <div className="w-full md:w-6/12 sm:w-8/12 mx-auto text-2xl sm:text-3xl text-box_text text-center font-GmarketSansBold italic">
       <Slider {...settings}>
         {rank.map((v) => (
           <div key={v1()}>
-            <div className="relative w-120 h-96 m-auto">
+            <div className="relative w-120 h-96 mx-auto">
               <img src={`media/box/box_${v.toLowerCase()}.png`} alt={v} />
             </div>
             <p className="-mt-20 sm:mt-0 text-shadow">{v} Box</p>

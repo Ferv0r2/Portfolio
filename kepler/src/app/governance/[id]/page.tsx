@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { NFTBox } from "@/components/NFTBox";
-import { web3, nftContract, govContract } from "@/blockchain";
-import { accountState } from "@/stores";
 import { v1 } from "uuid";
+
+import { useRecoilValue } from "recoil";
+import { NFTBox } from "@/components/NFTBox";
+import { accountState } from "@/stores";
 
 interface IProposal {
   title: string;
@@ -36,19 +36,6 @@ export const Proposal = () => {
   const [times, setTimer] = useState("0");
   const [tkURI, setTokenURIs] = useState([]);
   const router = useRouter();
-  const proposal_id = parseInt(router.query.id as string) - 1;
-
-  useEffect(() => {
-    const setProposalInfo = async () => {
-      const stat = await govContract.methods.status(proposal_id).call();
-      const propose = await govContract.methods.proposals(proposal_id).call();
-
-      setStatus(stat);
-      setProposal(propose);
-    };
-
-    setProposalInfo();
-  }, []);
 
   return (
     <div className="container">

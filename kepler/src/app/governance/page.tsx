@@ -14,10 +14,10 @@ const Governance = () => {
   const [status, setStatus] = useState(0);
 
   return (
-    <div className="max-w-4xl m-auto min-h-screen text-white text-center font-GmarketSansMedium">
+    <div className="max-w-4xl mx-auto min-h-screen text-white text-center font-GmarketSansMedium">
       <div className="relative">
         <img
-          className="w-11/12 sm:w-10/12 m-auto"
+          className="w-11/12 sm:w-10/12 mx-auto"
           src="media/icons/gov_icon.png"
         />
         <div className="absolute italic text-shadow-purple text-center font-bold transform top-16 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -27,7 +27,7 @@ const Governance = () => {
       </div>
       <div className="pb-12 italic">
         <Link href="/proposal">
-          <div className="w-1/4 m-auto rounded-3xl -mt-6 p-3 text-xl font-GmarketSansBold cursor-pointer bg-govBtn">
+          <div className="w-1/4 mx-auto rounded-3xl -mt-6 p-3 text-xl font-GmarketSansBold cursor-pointer bg-govBtn">
             제안 작성하기
           </div>
         </Link>
@@ -45,33 +45,33 @@ const Governance = () => {
         <div className="py-12 text-lg italic">
           <div className="text-2xl font-bold">LIST</div>
           <div className="py-6">
-            <div className="flex w-9/12 m-auto bg-govBtn p-6 rounded-2xl items-center justify-center text-center">
-              <div className="w-1/12 m-auto">
+            <div className="flex w-9/12 mx-auto bg-govBtn p-6 rounded-2xl items-center justify-center text-center">
+              <div className="w-1/12 mx-auto">
                 {/* <ul>{ids}</ul> */}
                 <ul>{0}</ul>
               </div>
-              <div className="w-9/12 m-auto border-r-2">
-                {/* <ul className="w-11/12 m-auto">{titles}</ul> */}
-                <ul className="w-11/12 m-auto">{"제목입니다."}</ul>
+              <div className="w-9/12 mx-auto border-r-2">
+                {/* <ul className="w-11/12 mx-auto">{titles}</ul> */}
+                <ul className="w-11/12 mx-auto">{"제목입니다."}</ul>
               </div>
-              <div className="w-2/12 m-auto">
+              <div className="w-2/12 mx-auto">
                 {/* <ul>{stats}</ul> */}
                 <ul>{"상태"}</ul>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex w-2/3 sm:w-1/3 py-8 m-auto items-center">
+        <div className="flex w-2/3 sm:w-1/3 py-8 mx-auto items-center">
           <span className="w-1/4 cursor-pointer" onClick={() => {}}>
             <img
-              className="w-1/2 rounded-md p-1 m-auto"
+              className="w-1/2 rounded-md p-1 mx-auto"
               src="media/icons/gov_prev.png"
             />
           </span>
           <p className="w-1/2 text-xl">{section + 1}</p>
           <span className="w-1/4 cursor-pointer" onClick={() => {}}>
             <img
-              className="w-1/2 rounded-md p-1 m-auto"
+              className="w-1/2 rounded-md p-1 mx-auto"
               src="media/icons/gov_next.png"
             />
           </span>

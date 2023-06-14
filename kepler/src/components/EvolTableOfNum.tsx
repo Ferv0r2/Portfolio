@@ -16,12 +16,12 @@ export const EvolTableOfNum = ({ date, tokenData }: Props) => {
       <div className="TotalEvolTable__infoBox">
         <div className="TotalEvolTable__token">
           <h2 className="py-6">전체 진화 번호 ({tokenData.length})</h2>
-          <div className="flex w-10/12 h-48 overflow-y-scroll m-auto flex-wrap">
+          <div className="flex w-10/12 h-48 overflow-y-scroll mx-auto flex-wrap">
             {tokenData.length != 0 ? (
               tokenData.map((v) => {
                 return (
                   <a
-                    className="w-1/4 sm:w-2/12 m-auto py-3 hover:text-hover_pink"
+                    className="w-1/4 sm:w-2/12 mx-auto py-3 hover:text-hoverPink"
                     key={v1()}
                     href={baseURI + v}
                   >

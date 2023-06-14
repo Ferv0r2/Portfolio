@@ -75,11 +75,11 @@ export default function Box() {
 
   return (
     <MasterLayout bgType="bg-gradient-to-b from-boxTop to-boxBottom">
-      <main className="min-h-screen max-w-4xl m-auto text-white">
+      <main className="min-h-screen max-w-4xl mx-auto text-white">
         {modal && <BoxModal boxId={boxId} item={item} close={closeModal} />}
         <BoxSlider setBoxId={setBoxId} />
 
-        <div className="pt-20 pb-14 w-40 m-auto">
+        <div className="pt-20 pb-14 w-40 mx-auto">
           <div
             className="bg-gradient-to-b from-btnTop to-btnBottom text-center px-6 py-4 rounded-2xl cursor-pointer hover:from-white hover:to-white hover:text-btnTop"
             onClick={sendTxKey}
@@ -87,23 +87,23 @@ export default function Box() {
             <p className="text-xl font-NanumSqureBold font-bold">OPEN BOX</p>
           </div>
         </div>
-        <div className="w-9/12 m-auto">
+        <div className="w-9/12 mx-auto">
           <div className="block sm:flex px-5 py-10 bg-areaPurple rounded-3xl font-bold font-GmarketSansMedium text-center">
-            <div className="w-6/12 sm:w-4/12 m-auto">
+            <div className="w-6/12 sm:w-4/12 mx-auto">
               <p>Normal Key</p>
               <div className="pb-4 sm:pb-0 flex items-center justify-center m-4">
                 <img className="w-8" src="media/items/K1.png" />
                 <p className="italic">{key[0]}</p>
               </div>
             </div>
-            <div className="w-6/12 sm:w-4/12 m-auto">
+            <div className="w-6/12 sm:w-4/12 mx-auto">
               <p>Rare Key</p>
               <div className="pb-4 sm:pb-0 flex items-center justify-center m-4">
                 <img className="w-8" src="media/items/K2.png" />
                 <p className="italic">{key[1]}</p>
               </div>
             </div>
-            <div className="w-6/12 sm:w-4/12 m-auto">
+            <div className="w-6/12 sm:w-4/12 mx-auto">
               <p>Unique Key</p>
               <div className="pb-4 sm:pb-0 flex items-center justify-center m-4">
                 <img className="w-8" src="media/items/K3.png" />
@@ -117,7 +117,7 @@ export default function Box() {
           <p>선택된 박스에 따라 아래 확률 표가 설정됩니다</p>
         </div>
         <div className="pb-24 font-NanumSquareBold">
-          <div className="w-10/12 m-auto bg-tableBg p-3 sm:p-8">
+          <div className="w-10/12 mx-auto bg-tableBg p-3 sm:p-8">
             <div className="font-GmarketSansLight border-b-4 border-bar py-6 text-center text-2xl sm:text-3xl">
               <p className="text-tableTitle font-bold">Percentage Table</p>
             </div>
@@ -129,26 +129,26 @@ export default function Box() {
                   </p>
                   <div className="text-tableText">
                     <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
                         대형 5종류 각 {probData.large_potion[boxId]}%
                       </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
                         총 {probData.large_potion[boxId] * 5}%
                       </p>
                     </div>
                     <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
                         중형 5종류 각 {probData.medium_potion[boxId]}%
                       </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
                         총 {probData.medium_potion[boxId] * 5}%
                       </p>
                     </div>
                     <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
                         소형 5종류 각 {probData.small_potion[boxId]}%
                       </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
                         총 {probData.small_potion[boxId] * 5}%
                       </p>
                     </div>
@@ -160,26 +160,26 @@ export default function Box() {
                   </p>
                   <div className="text-tableText">
                     <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
                         대형 5종류 각 {probData.large_mix_potion[boxId]}%
                       </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
                         총 {probData.large_mix_potion[boxId] * 5}%
                       </p>
                     </div>
                     <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
                         중형 5종류 각 {probData.medium_mix_potion[boxId]}%
                       </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
                         총 {probData.medium_mix_potion[boxId] * 5}%
                       </p>
                     </div>
                     <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
                         소형 5종류 각 {probData.small_mix_potion[boxId]}%
                       </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
                         총 {probData.small_mix_potion[boxId] * 5}%
                       </p>
                     </div>
@@ -193,26 +193,26 @@ export default function Box() {
                   </p>
                   <div className="text-tableText">
                     <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
                         상급 곡괭이
                       </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
                         총 {probData.advanced_pickaxe[boxId]}%
                       </p>
                     </div>
                     <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
                         중급 곡괭이
                       </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
                         총 {probData.intermediate_pickaxe[boxId]}%
                       </p>
                     </div>
                     <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
                         하급 곡괭이
                       </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
                         총 {probData.low_pickaxe[boxId]}%
                       </p>
                     </div>
@@ -224,10 +224,10 @@ export default function Box() {
                   </p>
                   <div className="text-tableText">
                     <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
                         믹스 스톤 각 {probData.stone[boxId]}%
                       </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 m-auto">
+                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
                         총 {probData.stone[boxId] * 5}%
                       </p>
                     </div>

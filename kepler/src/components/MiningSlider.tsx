@@ -48,11 +48,11 @@ export const MiningSlider = ({ setPick }: Props) => {
   const rank = ["하", "중", "상"];
 
   return (
-    <div className="w-full md:w-6/12 sm:w-8/12 m-auto text-2xl sm:text-3xl text-box_text text-center font-GmarketSansBold">
+    <div className="w-full md:w-6/12 sm:w-8/12 mx-auto text-2xl sm:text-3xl text-box_text text-center font-GmarketSansBold">
       <Slider {...settings}>
         {rank.map((v, i) => (
           <div key={v1()}>
-            <div className="relative w-108 h-108 m-auto">
+            <div className="relative w-108 h-108 mx-auto">
               <img src={`media/items/${i + 1}PK.png`} alt={v} />
             </div>
             <p className="text-shadow">{v}급 곡괭이</p>
