@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import clsx from "clsx";
 
-/* Component */
 import { AutoImage } from "@/utils";
 
 interface Props {

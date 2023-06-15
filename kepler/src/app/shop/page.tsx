@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from "react";
 import { v1 } from "uuid";
 
+import useInput from "@/hooks/useInput";
+
 import { MasterLayout } from "@/layout/MasterLayout";
 import { ShopModal } from "@/components/ShopModal";
 import { ShopPickaxe } from "@/components/ShopPickaxe";
 import { ShopKey } from "@/components/ShopKey";
 import { ShopPotion } from "@/components/ShopPotion";
-import useInput from "@/hooks/useInput";
 
 export default function Shop() {
   const [currentIdx, setIndex] = useState<number>(0);
@@ -258,7 +259,7 @@ export default function Shop() {
         </div>
 
         <div className="text-center text-sm sm:text-base py-3">
-          <p>예제 NFT로 번호는 0 ~ 29 까지 있습니다</p>
+          <p>예제 NFT로 번호는 01 ~ 30 까지 있습니다</p>
         </div>
       </div>
     </MasterLayout>

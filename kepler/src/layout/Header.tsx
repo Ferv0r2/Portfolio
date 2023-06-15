@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { replaceAddress } from "@/utils/replaceAddress";
-import { AutoImage } from "@/utils";
+import { AutoImage, replaceAddress } from "@/utils";
 
 interface Props {
   address: string;

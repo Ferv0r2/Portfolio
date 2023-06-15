@@ -1,5 +1,5 @@
 import React, { MouseEventHandler } from "react";
-import { TradeButton } from "./TradeButton";
+import { TradeButton } from "@/components/TradeButton";
 
 interface Props {
   id: number;

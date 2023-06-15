@@ -23,8 +23,8 @@ export default function useInput<T>(initialValue: T): UseInputHook<T> {
       return;
     }
 
-    if (Number(input) < 0 || Number(input) > 30) {
-      alert("예제 NFT로 번호는 0 ~ 30 까지 있습니다");
+    if (Number(input) < 1 || Number(input) > 30) {
+      alert("예제 NFT로 번호는 01 ~ 30 까지 있습니다");
       return;
     }
 

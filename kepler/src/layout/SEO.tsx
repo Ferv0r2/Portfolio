@@ -13,7 +13,7 @@ export const SEO = () => {
       <meta property="og:url" content="https://kepler.wontae.site" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Kepler Contents" />
-      <meta property="og:description" content="#진화확인 #상자깡 #채굴 #상점" />
+      <meta property="og:description" content="#상자깡 #채굴 #상점 #거버넌스" />
       <meta property="og:image" content="/media/banners/kepler_banner.png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />

@@ -16,7 +16,7 @@ export const MiningSlider = ({ setPick }: Props) => {
           onClick();
         }}
       >
-        <img src="media/icons/mining_prev.png" />
+        <img src="/media/icons/mining_prev.png" />
       </div>
     );
   };
@@ -30,7 +30,7 @@ export const MiningSlider = ({ setPick }: Props) => {
           onClick();
         }}
       >
-        <img src="media/icons/mining_next.png" />
+        <img src="/media/icons/mining_next.png" />
       </div>
     );
   };

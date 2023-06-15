@@ -1,8 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
 import Slider from "react-slick";
-
-import { useSetRecoilState } from "recoil";
-import { boxIdState } from "@/stores";
 import { v1 } from "uuid";
 
 interface Props {
@@ -19,7 +16,7 @@ export const BoxSlider = ({ setBoxId }: Props) => {
           onClick();
         }}
       >
-        <img src="media/icons/box_prev.png" />
+        <img src="/media/icons/box_prev.png" />
       </div>
     );
   };
@@ -33,7 +30,7 @@ export const BoxSlider = ({ setBoxId }: Props) => {
           onClick();
         }}
       >
-        <img src="media/icons/box_next.png" />
+        <img src="/media/icons/box_next.png" />
       </div>
     );
   };
@@ -56,7 +53,7 @@ export const BoxSlider = ({ setBoxId }: Props) => {
         {rank.map((v) => (
           <div key={v1()}>
             <div className="relative w-120 h-96 mx-auto">
-              <img src={`media/box/box_${v.toLowerCase()}.png`} alt={v} />
+              <img src={`/media/box/box_${v.toLowerCase()}.png`} alt={v} />
             </div>
             <p className="-mt-20 sm:mt-0 text-shadow">{v} Box</p>
           </div>

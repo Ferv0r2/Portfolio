@@ -2,31 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-
-import { MasterLayout } from "@/layout/MasterLayout";
-import { AutoImage } from "@/utils";
 import { v1 } from "uuid";
 
-export default function Home() {
-  const category = [
-    {
-      name: "Today's Evolution",
-      link: "/evolution",
-    },
-    {
-      name: "Random Box",
-      link: "/box",
-    },
-    {
-      name: "Mining",
-      link: "/mining",
-    },
-    {
-      name: "Goldot Shop",
-      link: "/shop",
-    },
-  ];
+import { MasterLayout } from "@/layout/MasterLayout";
+import { AutoImage, navData } from "@/utils";
 
+export default function Home() {
   return (
     <MasterLayout bgType="bg-main">
       <main className="min-h-screen max-w-3xl mx-auto">
@@ -34,7 +15,7 @@ export default function Home() {
           <img src="/media/banners/main_banner.png" />
         </div>
         <div className="max-w-xl md:max-w-2xl mx-auto text-center grid grid-cols-1 gap-y-4 sm:grid-cols-2 text-base md:text-lg text-lightGray items-center font-GmarketSansMedium italic">
-          {category.map((v, i) => (
+          {navData.map((v) => (
             <Link key={v1()} href={v.link}>
               <div className="w-11/12 mx-auto items-center">
                 <div className="px-4 py-2 cursor-pointer hover:text-hoverPink">
@@ -45,23 +26,14 @@ export default function Home() {
               </div>
             </Link>
           ))}
-          <div className="col-span-1 sm:col-span-2 items-center">
-            <Link href="/governance">
-              <div className="w-11/12 mx-auto items-center">
-                <div className="px-4 sm:px-0 py-2 cursor-pointer hover:text-hoverPink">
-                  <p className="w-full mx-auto py-4 px-3 border-4 border-gray-100 rounded">
-                    Governance
-                  </p>
-                </div>
-              </div>
-            </Link>
-          </div>
           <div className="col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 w-10/12 mx-auto text-sm sm:text-base my-4">
             <div className="w-full pb-5 text-center">
               <p>More Information?</p>
             </div>
             <div className="w-full pb-5">
               <a
+                target="_blank"
+                rel="noreferrer"
                 href="https://docs.kepler.wontae.site/"
                 className="flex underline underline-offset-4 justify-center items-center hover:text-hoverPink"
               >

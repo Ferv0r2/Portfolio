@@ -1,5 +1,5 @@
 import React, { ChangeEventHandler, MouseEventHandler } from "react";
-import { TradeButton } from "./TradeButton";
+import { TradeButton } from "@/components/TradeButton";
 import { v1 } from "uuid";
 
 interface Props {

@@ -1,7 +1,8 @@
 import { ReactNode, useEffect } from "react";
+import { useRecoilValue } from "recoil";
+
 import { SEO, Header, Footer, ScrollTop } from "@/layout";
 import useScroll from "@/hooks/useScroll";
-import { useRecoilValue } from "recoil";
 import { accountState } from "@/stores";
 
 interface Props {
