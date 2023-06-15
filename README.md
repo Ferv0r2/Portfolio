@@ -13,14 +13,16 @@
 - AWS의 S3, Route 53, CloudFront를  활용한 정적페이지 배포 경험
 - 실시간 채팅방 내에서 1,000명 이상의 사용자 피드백을 수용한 커뮤니케이션 경험
 
-## Kepler-452b - 수정 진행중
+## Kepler-452b
 
 - 포트폴리오 리팩토링 전
 
   > ReactJS, JavaScript, CSS, Git-Pages
 
 - 포트폴리오 리팩토링 후
+
   > NextJS, TypeScript, TailwindCSS, AWS S3, AWS CloudFront, AWS Route 53
+
 - Klaytn 체인에서 진행한 NFT 프로젝트입니다.
 - 날씨에 따라 이미지가 생장하는 우주 식물을 컨텐츠로 진행하였습니다.
 - openCV 라이브러리를 활용하여 Generative Art 생성 로직 개발하였습니다.
@@ -28,7 +30,7 @@
 
 - Link
 
-  > [Main - 컨텐츠 이용 페이지](https://kepler.wontae.site) // 수정 진행중
+  > [Main - 컨텐츠 이용 페이지](https://kepler.wontae.site)
 
   > [Docs - 프로젝트 소개 문서](https://docs.kepler.wontae.site/)
 
@@ -46,8 +48,11 @@
 
 ## NFPS ( NFT Funding Payment Service )
 
+> NextJS, TypeScript, TailwindCSS, AWS S3, AWS CloudFront, AWS Route 53
+
 - 기존 클라우드 펀딩 서비스에서 스마트 컨트랙트를 융합한 Web3 펀딩 페이지입니다.
 - 펀딩을 생성하고 각 단계별로 DAO 시스템을 통해 투표하고 프로젝트 진행 여부를 투자자가 판단할 수 있게 합니다.
+- https://nfps.wontae.site
 
 ## Payment Module
 
