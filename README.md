@@ -21,7 +21,7 @@
 
 - 포트폴리오 리팩토링 후
 
-  > NextJS, TypeScript, TailwindCSS, AWS S3, AWS CloudFront, AWS Route 53
+  > NextJS, TypeScript, TailwindCSS, Vercel
 
 - Klaytn 체인에서 진행한 NFT 프로젝트입니다.
 - 날씨에 따라 이미지가 생장하는 우주 식물을 컨텐츠로 진행하였습니다.
@@ -58,13 +58,7 @@
 
 > TypeScript, Solidity, Babel, Webpack
 
-- 스마트 컨트랙트를 다루지 않더라도 결제 시스템을 도입할 수 있는 모듈입니다.
-- npm 홈페이지를 통해 확인할 수 있습니다. `https://www.npmjs.com/package/metaoneer-payment`
-- 아래와 같은 방법으로 Quick Start가 가능합니다. ( 지원 체인 : 97 )
-
-```
-npx create-react-app my-app
-cd my-app
-npm install metaoneer-payment
-npm start
-```
+- BNB 블록체인 INNOVATION HACKATHON에 참여한 프로젝트입니다.
+- 스마트 컨트랙트를 다루지 않더라도 간단한 상품 결제 시스템을 도입할 수 있는 모듈입니다.
+- npm 홈페이지를 통해 확인할 수 있습니다.
+- https://www.npmjs.com/package/metaoneer-payment
