@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import { v1 } from "uuid";
 
 import { MasterLayout } from "@/layout/MasterLayout";
 import { BoxSlider } from "@/components/BoxSlider";
 import { BoxModal } from "@/components/BoxModal";
-import { probData } from "@/utils";
+import { AutoImage, probData } from "@/utils";
 
 export default function Box() {
   const [boxId, setBoxId] = useState<number>(0);
@@ -73,6 +74,39 @@ export default function Box() {
     setModal(false);
   };
 
+  const rank = ["Normal", "Rare", "Unique"];
+  const potionSize = [
+    {
+      label: "대형",
+      data: probData.large_potion[boxId],
+      mix: probData.large_mix_potion[boxId],
+    },
+    {
+      label: "중형",
+      data: probData.medium_potion[boxId],
+      mix: probData.medium_mix_potion[boxId],
+    },
+    {
+      label: "소형",
+      data: probData.small_potion[boxId],
+      mix: probData.small_mix_potion[boxId],
+    },
+  ];
+  const rankPick = [
+    {
+      label: "상급",
+      data: probData.advanced_pickaxe[boxId],
+    },
+    {
+      label: "중급",
+      data: probData.intermediate_pickaxe[boxId],
+    },
+    {
+      label: "하급",
+      data: probData.low_pickaxe[boxId],
+    },
+  ];
+
   return (
     <MasterLayout bgType="bg-gradient-to-b from-boxTop to-boxBottom">
       <main className="min-h-screen max-w-4xl mx-auto text-white">
@@ -89,27 +123,17 @@ export default function Box() {
         </div>
         <div className="w-9/12 mx-auto">
           <div className="block sm:flex px-5 py-10 bg-areaPurple rounded-3xl font-bold font-GmarketSansMedium text-center">
-            <div className="w-6/12 sm:w-4/12 mx-auto">
-              <p>Normal Key</p>
-              <div className="pb-4 sm:pb-0 flex items-center justify-center m-4">
-                <img className="w-8" src="media/items/K1.png" />
-                <p className="italic">{key[0]}</p>
+            {rank.map((v, i) => (
+              <div key={v1()} className="w-6/12 sm:w-4/12 mx-auto">
+                <p>{v} Key</p>
+                <div className="pb-4 sm:pb-0 flex items-center justify-center m-4">
+                  <figure className="relative w-8 h-8">
+                    <AutoImage src={`media/items/K${i + 1}.png`} alt="key" />
+                  </figure>
+                  <p className="italic">{key[i]}</p>
+                </div>
               </div>
-            </div>
-            <div className="w-6/12 sm:w-4/12 mx-auto">
-              <p>Rare Key</p>
-              <div className="pb-4 sm:pb-0 flex items-center justify-center m-4">
-                <img className="w-8" src="media/items/K2.png" />
-                <p className="italic">{key[1]}</p>
-              </div>
-            </div>
-            <div className="w-6/12 sm:w-4/12 mx-auto">
-              <p>Unique Key</p>
-              <div className="pb-4 sm:pb-0 flex items-center justify-center m-4">
-                <img className="w-8" src="media/items/K3.png" />
-                <p className="italic">{key[2]}</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="text-sm sm:text-base py-10 font-GmarketSansMedium text-center">
@@ -128,30 +152,16 @@ export default function Box() {
                     기존 포션
                   </p>
                   <div className="text-tableText">
-                    <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
-                        대형 5종류 각 {probData.large_potion[boxId]}%
-                      </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
-                        총 {probData.large_potion[boxId] * 5}%
-                      </p>
-                    </div>
-                    <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
-                        중형 5종류 각 {probData.medium_potion[boxId]}%
-                      </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
-                        총 {probData.medium_potion[boxId] * 5}%
-                      </p>
-                    </div>
-                    <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
-                        소형 5종류 각 {probData.small_potion[boxId]}%
-                      </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
-                        총 {probData.small_potion[boxId] * 5}%
-                      </p>
-                    </div>
+                    {potionSize.map((v) => (
+                      <div className="block sm:flex" key={v.label}>
+                        <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
+                          {v.label} 5종류 각 {v.data}%
+                        </p>
+                        <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
+                          총 {v.data * 5}%
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
                 <div className="w-full text-center">
@@ -159,65 +169,38 @@ export default function Box() {
                     믹스종 포션
                   </p>
                   <div className="text-tableText">
-                    <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
-                        대형 5종류 각 {probData.large_mix_potion[boxId]}%
-                      </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
-                        총 {probData.large_mix_potion[boxId] * 5}%
-                      </p>
-                    </div>
-                    <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
-                        중형 5종류 각 {probData.medium_mix_potion[boxId]}%
-                      </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
-                        총 {probData.medium_mix_potion[boxId] * 5}%
-                      </p>
-                    </div>
-                    <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
-                        소형 5종류 각 {probData.small_mix_potion[boxId]}%
-                      </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
-                        총 {probData.small_mix_potion[boxId] * 5}%
-                      </p>
-                    </div>
+                    {potionSize.map((v) => (
+                      <div className="block sm:flex" key={v.label}>
+                        <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
+                          {v.label} 5종류 각 {v.mix}%
+                        </p>
+                        <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
+                          총 {v.mix * 5}%
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
               <div className="flex pt-6 sm:pt-20">
                 <div className="w-full text-center">
-                  <p className="text-lg sm:text-2xl pb-2 font-GmarketSansMedium ">
+                  <p className="text-lg sm:text-2xl pb-2 font-GmarketSansMedium">
                     곡괭이
                   </p>
                   <div className="text-tableText">
-                    <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
-                        상급 곡괭이
-                      </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
-                        총 {probData.advanced_pickaxe[boxId]}%
-                      </p>
-                    </div>
-                    <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
-                        중급 곡괭이
-                      </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
-                        총 {probData.intermediate_pickaxe[boxId]}%
-                      </p>
-                    </div>
-                    <div className="block sm:flex">
-                      <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
-                        하급 곡괭이
-                      </p>
-                      <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
-                        총 {probData.low_pickaxe[boxId]}%
-                      </p>
-                    </div>
+                    {rankPick.map((v) => (
+                      <div className="block sm:flex" key={v.label}>
+                        <p className="w-full sm:w-8/12 text-sm sm:text-base p-3 mx-auto">
+                          {v.label} 곡괭이
+                        </p>
+                        <p className="w-full sm:w-4/12 text-sm sm:text-base p-3 mx-auto">
+                          총 {v.data}%
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
+
                 <div className="w-full text-center">
                   <p className="text-lg sm:text-2xl pb-2 font-GmarketSansMedium ">
                     믹스 스톤

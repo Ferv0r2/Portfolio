@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <MasterLayout bgType="bg-main">
       <main className="min-h-screen max-w-3xl mx-auto">
-        <div className="w-80 h-64 sm:w-128 sm:h-108 mx-auto">
-          <img src="/media/banners/main_banner.png" />
-        </div>
+        <figure className="relative w-80 h-64 sm:w-128 sm:h-108 mx-auto">
+          <AutoImage src="/media/banners/main_banner.png" alt="banner" />
+        </figure>
         <div className="max-w-xl md:max-w-2xl mx-auto text-center grid grid-cols-1 gap-y-4 sm:grid-cols-2 text-base md:text-lg text-lightGray items-center font-GmarketSansMedium italic">
           {navData.map((v) => (
             <Link key={v1()} href={v.link}>

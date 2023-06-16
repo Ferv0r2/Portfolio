@@ -10,14 +10,14 @@ export const Header = ({ address }: Props) => {
   return (
     <header className="max-w-5xl mx-auto sticky top-0 px-2 sm:px-6 lg:px-8 font-GmarketSansBold z-[99]">
       <div className="relative flex items-center justify-between h-28 text-nav italic">
-        <Link href="/" className="flex cursor-pointer">
+        <Link href="/" className="flex items-center cursor-pointer">
           <figure className="relative w-16 h-16 mx-auto">
             <AutoImage src="/media/logos/logo.png" alt="logo" />
           </figure>
           <p className="block mx-3 my-auto font-bold text-3xl">Kepler-452b</p>
         </Link>
         <div className="hidden md:block">
-          <div className="flex">
+          <div className="flex items-center">
             <figure className="relative h-7 w-7">
               <AutoImage src="/media/logos/klaytn_logo.png" alt="chain" />
             </figure>

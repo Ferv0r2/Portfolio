@@ -7,7 +7,7 @@ import { useRecoilValue } from "recoil";
 
 import { MasterLayout } from "@/layout/MasterLayout";
 import { accountState } from "@/stores";
-import { proposalData } from "@/utils";
+import { AutoImage, proposalData } from "@/utils";
 
 export default function Proposal({ params }: { params: { id: number } }) {
   const account = useRecoilValue(accountState);
@@ -18,21 +18,23 @@ export default function Proposal({ params }: { params: { id: number } }) {
 
   return (
     <MasterLayout bgType="bg-govBg">
-      <div className="max-w-3xl mx-auto font-GmarketSansMedium text-[#ececec]">
+      <div className="max-w-3xl w-11/12 pt-6 mx-auto font-GmarketSansMedium text-[#ececec]">
         <Link href="/governance">
-          <figure className="relative w-72 text-lg hover:text-[#988bd4]">
-            <img src="/media/icons/pro_prev.png" />
-            <figcaption className="absolute inset-0 flex items-center justify-center">
+          <div className="relative w-48 sm:w-72 text-sm sm:text-lg hover:text-[#988bd4]">
+            <figure className="relative w-48 sm:w-72 h-12">
+              <AutoImage src="/media/icons/pro_prev.png" alt="back" />
+            </figure>
+            <p className="absolute inset-0 flex items-center justify-center">
               목록으로 돌아가기
-            </figcaption>
-          </figure>
+            </p>
+          </div>
         </Link>
 
-        <div className="mt-6 mb-20 p-12 rounded-2xl text-lg bg-[#06050c] whitespace-pre-wrap">
-          <div className="font-GmarketSansBold text-3xl text-center p-4 italic">
+        <div className="mt-6 mb-20 p-8 sm:p-12 rounded-2xl text-lg bg-[#06050c] whitespace-pre-wrap">
+          <div className="font-GmarketSansBold text-2xl sm:text-3xl text-center p-0 sm:p-4 italic">
             {proposalData[proposalData.length - params.id]?.title || ""}
           </div>
-          <div className="flex w-10/12 mx-auto rounded-2xl bg-[#242329] text-center my-12 font-GmarketSansMedium">
+          <div className="flex w-full sm:w-10/12 mx-auto rounded-2xl bg-[#242329] text-center my-12 font-GmarketSansMedium">
             <div className="grid grid-cols-3 p-4 w-full">
               {proposalData[proposalData.length - params.id]?.status ===
               "지향" ? (
@@ -76,12 +78,12 @@ export default function Proposal({ params }: { params: { id: number } }) {
           </div>
           <div className="text-[#ececec] pb-8 text-center">
             <h2>작성자</h2>
-            <p className="mt-4 text-base">{account.account}</p>
+            <p className="mt-4 text-base truncate">{account.account}</p>
           </div>
 
           <div className="text-[#ececec] pb-8 min-h-[200px]">
             <h2 className="text-center">세부 내용</h2>
-            <p className="mt-4 text-base leading-8 w-4/5 mx-auto">
+            <p className="mt-4 text-base leading-8 w-full sm:w-4/5 mx-auto">
               {proposalData[proposalData.length - params.id]?.content || ""}
             </p>
           </div>
@@ -91,7 +93,7 @@ export default function Proposal({ params }: { params: { id: number } }) {
               {proposalData[proposalData.length - params.id]?.summary || ""}
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 w-2/5 mx-auto text-center text-xl font-GmarketSansBold">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full sm:w-2/5 mx-auto text-center text-xl font-GmarketSansBold">
             {["찬성", "반대"].map((v) => (
               <button
                 key={v1()}
@@ -108,10 +110,13 @@ export default function Proposal({ params }: { params: { id: number } }) {
               <p>수량: 30개</p>
             </div>
           </div>
-          <div className="scroll grid grid-cols-5 gap-8 mt-8 h-40 overflow-y-scroll">
+          <div className="scroll grid grid-cols-2 sm:grid-cols-5 gap-8 mt-8 h-40 overflow-y-scroll">
             {[...Array(30)].map((_, i) => (
-              <figure className="relative">
-                <img src={`/media/nft/${String(i + 1).padStart(2, "0")}.png`} />
+              <figure key={v1()} className="relative w-24 h-24 mx-auto">
+                <AutoImage
+                  src={`/media/nft/${String(i + 1).padStart(2, "0")}.png`}
+                  alt={`nft${i + 1}`}
+                />
               </figure>
             ))}
           </div>
