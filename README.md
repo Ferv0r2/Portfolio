@@ -30,9 +30,9 @@
 
 - Link
 
-  > [Main - 컨텐츠 이용 페이지](https://kepler.wontae.site)
+  > [Main - 컨텐츠 이용 페이지](https://kepler.wontae.net)
 
-  > [Docs - 프로젝트 소개 문서](https://docs.kepler.wontae.site/)
+  > [Docs - 프로젝트 소개 문서](https://docs.kepler.wontae.net/)
 
   > [Medium - 프로젝트 관련 블로그](https://medium.com/@Kepler-452b)
 
@@ -44,7 +44,7 @@
 
 - 블록체인 내의 NFT를 통합관리할 수 있는 서비스입니다.
 - 개별 NFT 홀더 수 조회, 이벤트 생성을 통한 마케팅 서비스 등이 지원되며 개별 페이지를 제공합니다.
-- https://bims.wontae.site
+- https://bims.wontae.net
 
 ## NFPS ( NFT Funding Payment Service )
 
@@ -52,7 +52,7 @@
 
 - 기존 클라우드 펀딩 서비스에서 스마트 컨트랙트를 융합한 Web3 펀딩 페이지입니다.
 - 펀딩을 생성하고 각 단계별로 DAO 시스템을 통해 투표하고 프로젝트 진행 여부를 투자자가 판단할 수 있게 합니다.
-- https://nfps.wontae.site
+- https://nfps.wontae.net
 
 ## Payment Module
 

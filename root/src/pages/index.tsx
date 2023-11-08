@@ -94,7 +94,7 @@ const Home: NextPage = () => {
                     Link -{' '}
                     <a
                       className="underline underline-offset-2 hover:text-indigo-600"
-                      href="https://bims.wontae.site/"
+                      href="https://bims.wontae.net/"
                       target="_blank"
                     >
                       Website

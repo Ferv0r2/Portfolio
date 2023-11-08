@@ -95,7 +95,7 @@ export const projectDataArray: Project[] = [
     symbol: "KG",
     thumbnail:
       "https://www.google.co.kr/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
-    homepage: "https://bims.wontae.site",
+    homepage: "https://bims.wontae.net",
     holder_count: 1,
     total_supply: 2,
     event_count: 0,
@@ -108,7 +108,7 @@ export const projectDataArray: Project[] = [
     name: "KlayWeatherGirls",
     symbol: "KWG",
     thumbnail: "https://picsum.photos/200",
-    homepage: "http://bims.wontae.site",
+    homepage: "http://bims.wontae.net",
     holder_count: 1084,
     total_supply: 4964,
     event_count: 4,
@@ -147,7 +147,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-10T16:54:40.501944+00:00",
         created_at: "2022-10-10T16:54:40.501944+00:00",
@@ -160,7 +160,7 @@ export const eventDataArray: Event[] = [
         point: 3,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-10T16:54:40.501944+00:00",
         created_at: "2022-10-10T16:54:40.501944+00:00",
@@ -186,7 +186,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-11T06:23:19.435644+00:00",
         created_at: "2022-10-11T06:23:19.435644+00:00",
@@ -199,7 +199,7 @@ export const eventDataArray: Event[] = [
         point: 1,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-11T06:23:19.435644+00:00",
         created_at: "2022-10-11T06:23:19.435644+00:00",
@@ -225,7 +225,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-11T06:34:45.46205+00:00",
         created_at: "2022-10-11T06:34:45.46205+00:00",
@@ -238,7 +238,7 @@ export const eventDataArray: Event[] = [
         point: 1,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-11T06:34:45.46205+00:00",
         created_at: "2022-10-11T06:34:45.46205+00:00",
@@ -264,7 +264,7 @@ export const eventDataArray: Event[] = [
         point: 3,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-13T05:18:17.538178+00:00",
         created_at: "2022-10-13T05:18:17.538178+00:00",
@@ -277,7 +277,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-13T05:18:17.538178+00:00",
         created_at: "2022-10-13T05:18:17.538178+00:00",
@@ -304,7 +304,7 @@ export const eventDataArray: Event[] = [
         point: 1,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-15T04:42:46.870293+00:00",
         created_at: "2022-10-15T04:42:46.870293+00:00",
@@ -317,7 +317,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-15T04:42:46.870293+00:00",
         created_at: "2022-10-15T04:42:46.870293+00:00",
@@ -345,7 +345,7 @@ export const eventDataArray: Event[] = [
         point: 4,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-16T05:31:02.713371+00:00",
         created_at: "2022-10-16T05:31:02.713371+00:00",
@@ -359,7 +359,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-16T05:31:02.713371+00:00",
         created_at: "2022-10-16T05:31:02.713371+00:00",
@@ -385,7 +385,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-16T05:50:19.215164+00:00",
         created_at: "2022-10-16T05:50:19.215164+00:00",
@@ -398,7 +398,7 @@ export const eventDataArray: Event[] = [
         point: 1,
         type: "Like",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-16T05:50:19.215164+00:00",
         created_at: "2022-10-16T05:50:19.215164+00:00",
@@ -424,7 +424,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-17T04:22:58.913746+00:00",
         created_at: "2022-10-17T04:22:58.913746+00:00",
@@ -451,7 +451,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-17T20:13:01.319328+00:00",
         created_at: "2022-10-17T20:13:01.319328+00:00",
@@ -464,7 +464,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-17T20:13:01.319328+00:00",
         created_at: "2022-10-17T20:13:01.319328+00:00",
@@ -490,7 +490,7 @@ export const eventDataArray: Event[] = [
         point: 2,
         type: "link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-20T14:37:09.037277+00:00",
         created_at: "2022-10-20T14:37:09.037277+00:00",
@@ -519,7 +519,7 @@ export const eventDataArray: Event[] = [
         point: 3,
         type: "youtube.Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-20T14:37:09.037277+00:00",
         created_at: "2022-10-20T14:37:09.037277+00:00",
@@ -532,7 +532,7 @@ export const eventDataArray: Event[] = [
         point: 1,
         type: "twitter.Link",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-20T14:37:09.037277+00:00",
         created_at: "2022-10-20T14:37:09.037277+00:00",
@@ -545,7 +545,7 @@ export const eventDataArray: Event[] = [
         point: 4,
         type: "discord.invite",
         metadata: {
-          url: "http://bims.wontae.site",
+          url: "http://bims.wontae.net",
         },
         updated_at: "2022-10-20T14:37:09.037277+00:00",
         created_at: "2022-10-20T14:37:09.037277+00:00",

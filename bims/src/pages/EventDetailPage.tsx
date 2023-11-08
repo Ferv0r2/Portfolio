@@ -13,7 +13,7 @@ import { EventEndCard } from "components/card";
 import { UserTable } from "components/table/UserTable";
 import { KTSVG, Event, NFTBase, Joiner } from "utils";
 
-const BASE_URL = "https://bims.wontae.site/user/";
+const BASE_URL = "https://bims.wontae.net/user/";
 const EventDetailPage = () => {
   const params = useParams();
   const { eventList } = useEvent();

@@ -128,7 +128,7 @@ export const otherItems: ALink[] = [
   },
   {
     name: "BIMS",
-    url: "https://bims.wontae.site",
+    url: "https://bims.wontae.net",
   },
   {
     name: "npm 결제 모듈",
