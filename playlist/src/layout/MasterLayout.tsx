@@ -1,6 +1,6 @@
 import { ReactNode, useEffect } from "react";
 import { Header, Footer, ScrollTop } from "@/layout";
-import { useScroll } from "@/hooks/useScroll";
+import { useScroll } from "@/hooks";
 
 interface Props {
   children: ReactNode;
@@ -21,11 +21,11 @@ export const MasterLayout = ({ children }: Props) => {
 
   return (
     <>
-      <div className="min-h-screen bg-[#151521]">
+      <div className="min-h-screen">
         <Header />
         {children}
+        <Footer />
       </div>
-      <Footer />
       <ScrollTop active={scrollActive} />
     </>
   );

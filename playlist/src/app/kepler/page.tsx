@@ -1,16 +1,14 @@
 "use client";
 
-import { IntroBanner, ArticleSection, Skills } from "@/components";
+import { ArticleSection } from "@/components/ArticleSection";
 import { portfolioData } from "@/const";
 import { MasterLayout } from "@/layout";
 
-export default function Home() {
+export default function Kepler() {
   return (
     <>
       <MasterLayout>
-        <IntroBanner />
         <ArticleSection title="Portfolio" data={portfolioData} />
-        <Skills />
       </MasterLayout>
     </>
   );

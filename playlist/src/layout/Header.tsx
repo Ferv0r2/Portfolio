@@ -1,26 +1,27 @@
-import { AutoImage, AutoSVG } from "@/utils";
+import Link from "next/link";
 import React from "react";
 
 export const Header = () => {
   return (
-    <header className="p-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center">
-          <figure className="relative w-10 h-10">
-            <AutoImage src="/media/logos/main-logo.png" alt="logo" />
-          </figure>
-          <h2 className="ml-1 font-bold text-xl text-white">Folio Player</h2>
-        </div>
-        <a
-          className="group"
-          target="_blank"
-          href="https://github.com/Ferv0r2/Portfolio"
-        >
-          <AutoSVG
-            className="group-hover:scale-110 w-8 h-8"
-            src="/media/logos/github.svg"
-          />
-        </a>
+    <header className="sticky top-0 left-0 z-10 bg-zinc-900 text-zinc-50 py-4">
+      <div className="container mx-auto px-4 md:px-6">
+        <nav className="flex items-center justify-between">
+          <div className="text-2xl font-bold">Who's next?</div>
+          <div className="space-x-4">
+            <Link className="text-zinc-50 hover:text-zinc-100" href="#">
+              Home
+            </Link>
+            <Link className="text-zinc-50 hover:text-zinc-100" href="#">
+              Portfoilo
+            </Link>
+            <Link className="text-zinc-50 hover:text-zinc-100" href="#">
+              Tech
+            </Link>
+            <Link className="text-zinc-50 hover:text-zinc-100" href="#">
+              Career
+            </Link>
+          </div>
+        </nav>
       </div>
     </header>
   );
