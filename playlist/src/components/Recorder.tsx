@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Recorder() {
+export const Recorder = () => {
   return (
     <div>
       <figure className="relative w-20 h-20">
@@ -8,4 +8,4 @@ export default function Recorder() {
       </figure>
     </div>
   );
-}
+};

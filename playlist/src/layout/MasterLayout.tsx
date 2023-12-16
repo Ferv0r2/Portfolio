@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { Header, Footer, ScrollTop } from "@/layout";
 import { useScroll } from "@/hooks";
 
@@ -22,7 +22,7 @@ export const MasterLayout = ({ children }: Props) => {
   return (
     <>
       <div className="min-h-screen">
-        <Header />
+        <Header active={scrollActive} />
         {children}
         <Footer />
       </div>

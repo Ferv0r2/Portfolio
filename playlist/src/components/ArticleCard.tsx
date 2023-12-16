@@ -10,11 +10,11 @@ interface Props {
 
 export const ArticleCard = ({ img, title, description, url }: Props) => {
   return (
-    <div>
+    <div className="group">
       <img
         src={img}
         alt={title}
-        className="w-full h-64 object-cover object-center rounded-lg"
+        className="w-full h-64 object-cover object-center rounded-lg border shadow-lg"
         height="400"
         style={{
           aspectRatio: "600/400",
@@ -24,7 +24,10 @@ export const ArticleCard = ({ img, title, description, url }: Props) => {
       />
       <h3 className="text-xl font-bold mb-2 mt-4">{title}</h3>
       <p className="text-zinc-500 dark:text-zinc-400">{description}</p>
-      <Link className="text-blue-500 hover:text-blue-700 mt-4" href={url}>
+      <Link
+        className="cursor-pointer text-blue-500 group-hover:text-blue-700 mt-4"
+        href={url}
+      >
         See More
       </Link>
     </div>
