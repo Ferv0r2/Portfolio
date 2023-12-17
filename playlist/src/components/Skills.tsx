@@ -1,16 +1,37 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/0W13RkH
- */
+"use client";
+
+import clsx from "clsx";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+
 export const Skills = () => {
+  const [titleRef, isTitleView] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+  const [isContentView, setIsContentView] = useState(false);
+
+  useEffect(() => {
+    if (!isTitleView) return;
+    setTimeout(() => {
+      setIsContentView(true);
+    }, 300);
+  }, [isTitleView]);
+
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black">
+    <section id="skill" className="w-full py-12 md:py-24 lg:py-32 bg-black">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="grid gap-6 items-center">
           <div className="flex flex-col justify-center space-y-8 text-center">
-            <div className="space-y-2">
+            <div
+              ref={titleRef}
+              className={clsx(
+                "space-y-4 transition-all duration-1000",
+                isTitleView ? "animate-fade-in-up" : "translate-y-20 opacity-20"
+              )}
+            >
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-                Discover My Attitude
+                Skill
               </h1>
               <p className="max-w-[600px] text-zinc-200 md:text-xl dark:text-zinc-100 mx-auto">
                 My features are designed to enhance your productivity and
@@ -18,7 +39,14 @@ export const Skills = () => {
               </p>
             </div>
             <div className="w-full max-w-full space-y-4 mx-auto">
-              <div className="grid grid-cols-3 gap-8">
+              <div
+                className={clsx(
+                  "grid grid-cols-3 gap-8 transition-all duration-1000",
+                  isContentView
+                    ? "animate-fade-in-up"
+                    : "translate-y-20 opacity-20"
+                )}
+              >
                 <div className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg">
                   <div className="p-2 bg-black bg-opacity-50 rounded-full">
                     <svg
@@ -178,6 +206,7 @@ export const Skills = () => {
               </div>
             </div>
           </div>
+          0
         </div>
       </div>
     </section>

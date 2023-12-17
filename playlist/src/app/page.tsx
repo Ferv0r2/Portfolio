@@ -1,7 +1,6 @@
 "use client";
 
 import { IntroBanner, ArticleSection, Skills } from "@/components";
-import { portfolioData } from "@/const";
 import { MasterLayout } from "@/layout";
 
 export default function Home() {
@@ -9,7 +8,7 @@ export default function Home() {
     <>
       <MasterLayout>
         <IntroBanner />
-        <ArticleSection title="Portfolio" data={portfolioData} />
+        <ArticleSection />
         <Skills />
       </MasterLayout>
     </>

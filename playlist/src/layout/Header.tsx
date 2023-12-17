@@ -1,6 +1,7 @@
 import { NAV_LINKS } from "@/const";
 import { smoothScrollTo } from "@/utils";
 import clsx from "clsx";
+import Link from "next/link";
 import React, { FC } from "react";
 
 interface Props {
@@ -17,8 +18,10 @@ export const Header: FC<Props> = ({ active }) => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <nav className="flex items-center justify-between">
-          <div className="text-2xl font-bold">Who's next?</div>
-          <nav className="space-x-4">
+          <Link href="/">
+            <div className="special-text text-2xl font-bold">Who's next?</div>
+          </Link>
+          <nav className="space-x-8 text-lg">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.id}

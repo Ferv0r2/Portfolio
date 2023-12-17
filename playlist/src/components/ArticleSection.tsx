@@ -1,60 +1,64 @@
 import React from "react";
-import { ArticleCard } from "./ArticleCard";
-import { useInView } from "react-intersection-observer";
 import clsx from "clsx";
-
-interface Props {
-  title: string;
-  data: {
-    img: string;
-    title: string;
-    description: string;
-    url: string;
-  }[];
-}
+import { useInView } from "react-intersection-observer";
+import { ArticleCard } from "@/components/ArticleCard";
+import { portfolioData } from "@/const";
 
 const delays = ["", "delay-150", "delay-300"];
 
-export const ArticleSection = ({ title, data }: Props) => {
+export const ArticleSection = () => {
+  const [titleRef, isTitleView] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
   const [ref, inView] = useInView({
     threshold: 0.5,
     triggerOnce: true,
   });
 
   return (
-    <section id="project" className="w-full -mt-16 pt-20">
-      <main className="container mx-auto px-4 md:px-6 py-8">
-        <section className="mb-8">
-          <h2
-            className={clsx(
-              "text-3xl font-bold mb-4 transition-all duration-1000",
-              inView ? "animate-fade-in-up" : "translate-y-20 opacity-20"
-            )}
-          >
-            {title}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {data.map((article, index) => (
-              <div
-                ref={ref}
-                key={article.title}
-                className={clsx(
-                  "transition-all duration-1000 cursor-pointer",
-                  delays[index],
-                  inView ? "animate-fade-in-up" : "translate-y-20 opacity-20"
-                )}
-              >
-                <ArticleCard
-                  img={article.img}
-                  title={article.title}
-                  description={article.description}
-                  url={article.url}
-                />
-              </div>
-            ))}
+    <section id="project" className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6 mx-auto">
+        <div className="grid gap-6 items-center">
+          <div className="flex flex-col justify-center space-y-8">
+            <div
+              ref={titleRef}
+              className={clsx(
+                "space-y-4 text-center transition-all duration-1000",
+                isTitleView ? "animate-fade-in-up" : "translate-y-20 opacity-20"
+              )}
+            >
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-500">
+                Project
+              </h1>
+              <p className="max-w-[600px] text-black md:text-xl mx-auto">
+                My features are designed to enhance your productivity and
+                streamline your workflow.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {portfolioData.map((article, index) => (
+                <div
+                  ref={ref}
+                  key={article.title}
+                  className={clsx(
+                    "transition-all duration-1000 cursor-pointer",
+                    delays[index],
+                    inView ? "animate-fade-in-up" : "translate-y-20 opacity-20"
+                  )}
+                >
+                  <ArticleCard
+                    img={article.img}
+                    title={article.title}
+                    description={article.description}
+                    url={article.url}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </div>
     </section>
   );
 };
