@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import Lottie from "react-lottie-player";
 import lottieJson from "@/assets/lottie/dev.json";
-import { BannerCanvas } from "./BannerCanvas";
 
 export const IntroBanner = () => {
   const text = useRef(null);
@@ -34,7 +33,6 @@ export const IntroBanner = () => {
       id="home"
       className="w-full -mt-16 bg-gradient-to-r from-black text-gray-50 to-zinc-700 font-[GmarketSansMedium] animate-wave"
     >
-      <BannerCanvas />
       <main className="w-full md:w-[1200px] h-[768px] mx-auto grid grid-cols-1 md:grid-cols-2 justify-center gap-16">
         <div className="flex flex-col justify-center gap-8">
           <div className="flex flex-col text-[48px] font-bold leading-tight">

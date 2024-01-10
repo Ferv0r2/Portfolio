@@ -4,4 +4,3 @@ export { IntroBanner } from "./IntroBanner";
 export { Recoil } from "./Recoil";
 export { Recorder } from "./Recorder";
 export { Skills } from "./Skills";
-export { BannerCanvas } from "./BannerCanvas";
