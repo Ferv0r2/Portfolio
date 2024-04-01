@@ -1,11 +1,10 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react'
 
 interface Props {
-  img: string;
-  title: string;
-  description: string;
-  url: string;
+  img: string
+  title: string
+  description: string
+  url: string
 }
 
 export const ArticleCard = ({ img, title, description, url }: Props) => {
@@ -13,7 +12,7 @@ export const ArticleCard = ({ img, title, description, url }: Props) => {
     <div className="group">
       <figure className="relative overflow-hidden rounded-lg border shadow-lg">
         <img
-          src={img || ""}
+          src={img || ''}
           alt={title}
           className="w-full h-64 object-cover object-center trnasition-transform duration-300 group-hover:scale-110"
         />
@@ -24,5 +23,5 @@ export const ArticleCard = ({ img, title, description, url }: Props) => {
       </h3>
       <p className="text-zinc-500 dark:text-zinc-400">{description}</p>
     </div>
-  );
-};
+  )
+}

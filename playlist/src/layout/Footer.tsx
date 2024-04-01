@@ -1,6 +1,6 @@
-import React from "react";
-import { smoothScrollTo } from "@/utils";
-import { NAV_LINKS, OTHER_LINKS } from "@/const";
+import React from 'react'
+import { smoothScrollTo } from '@/utils'
+import { NAV_LINKS, OTHER_LINKS } from '@/const'
 
 export const Footer = () => {
   return (
@@ -53,15 +53,15 @@ export const Footer = () => {
             </div>
             <div className="mt-3 text-sm">
               <p>Email : amlk31255@gmail.com</p>
-              <p>Phone : 010-7103-2146</p>
+              <p>Phone : +82{')'}10-7103-2146</p>
             </div>
             <div className="text-sm mt-3">
               <span className="mr-2">&copy;</span>
-              <span>2023 Ferv0r2. ALL RIGHTS RESERVED.</span>
+              <span>2024. Ferv0r2 ALL RIGHTS RESERVED.</span>
             </div>
           </div>
         </div>
       </footer>
     </div>
-  );
-};
+  )
+}

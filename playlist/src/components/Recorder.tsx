@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export const Recorder = () => {
   return (
@@ -7,5 +7,5 @@ export const Recorder = () => {
         <img src="/media/img/record.png" alt="Record" />
       </figure>
     </div>
-  );
-};
+  )
+}

@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { IntroBanner, ArticleSection, Skills } from "@/components";
-import { MasterLayout } from "@/layout";
+import { IntroBanner, ArticleSection, Skills } from '@/components'
+import { MasterLayout } from '@/layout'
 
 export default function Home() {
   return (
@@ -12,5 +12,5 @@ export default function Home() {
         <Skills />
       </MasterLayout>
     </>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default function Head() {
   return (
@@ -25,5 +25,5 @@ export default function Head() {
       <meta name="revisit-after" content="3 days" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
     </>
-  );
+  )
 }

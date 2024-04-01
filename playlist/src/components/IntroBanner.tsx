@@ -1,32 +1,32 @@
-"use client";
+'use client'
 
-import React, { useEffect, useRef } from "react";
-import Typed from "typed.js";
-import Lottie from "react-lottie-player";
-import lottieJson from "@/assets/lottie/dev.json";
+import React, { useEffect, useRef } from 'react'
+import Typed from 'typed.js'
+import Lottie from 'react-lottie-player'
+import lottieJson from '@/assets/lottie/dev.json'
 
 export const IntroBanner = () => {
-  const text = useRef(null);
+  const text = useRef(null)
 
   useEffect(() => {
     const typed = new Typed(text.current, {
-      strings: ["Front-end Dev.", "Passion Dev."],
+      strings: ['Front-end Dev.', 'Passion Dev.'],
       typeSpeed: 50,
       backSpeed: 50,
       showCursor: true,
       onComplete: () => {
         setTimeout(() => {
           if (typed.cursor) {
-            typed.cursor.style.opacity = "0";
+            typed.cursor.style.opacity = '0'
           }
-        }, 1000);
+        }, 1000)
       },
-    });
+    })
 
     return () => {
-      typed.destroy();
-    };
-  }, []);
+      typed.destroy()
+    }
+  }, [])
 
   return (
     <section
@@ -46,9 +46,13 @@ export const IntroBanner = () => {
               I am a developer who is truly passionate about achieving results.
             </span>
           </div>
-          <div className="special-text cursor-pointer w-32 text-white flex justify-center transition-colors duration-300 bg-indigo-600 rounded-lg px-4 py-3 hover:bg-indigo-700">
+          <a
+            href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=jrjtXRGqTBrLkCrFzVnvCVgKtXGPLPtrDSKnnWfHJsnpBFvWTWLQcVvRtNpzbjjJxfvVQbjx"
+            rel="noreferral"
+            className="special-text cursor-pointer w-32 text-white flex justify-center transition-colors duration-300 bg-indigo-600 rounded-lg px-4 py-3 hover:bg-indigo-700"
+          >
             Contact
-          </div>
+          </a>
         </div>
         <div className="flex flex-col justify-center">
           <div className="w-full h-96">
@@ -57,5 +61,5 @@ export const IntroBanner = () => {
         </div>
       </main>
     </section>
-  );
-};
+  )
+}
