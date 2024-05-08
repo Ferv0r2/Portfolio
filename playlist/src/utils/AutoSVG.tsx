@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import SVG from 'react-inlinesvg'
+import { ReactSVG } from 'react-svg'
 
 interface Props {
   className?: string
@@ -7,5 +7,9 @@ interface Props {
 }
 
 export const AutoSVG: FC<Props> = ({ className, src }) => {
-  return <SVG src={src} className={className} />
+  return (
+    <>
+      <ReactSVG src={src} className={className} />
+    </>
+  )
 }
