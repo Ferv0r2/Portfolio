@@ -1,32 +1,32 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
-import { Header, Footer, ScrollTop } from "@/layout";
-import { useScroll } from "@/hooks";
+import { ReactNode, useEffect, useRef, useState } from 'react'
+import { Header, Footer, ScrollTop } from '@/layout'
+import { useScroll } from '@/hooks'
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export const MasterLayout = ({ children }: Props) => {
-  const { scrollActive, onScroll } = useScroll();
+  const { scrollActive, onScroll } = useScroll()
 
   useEffect(() => {
     const scrollListener = () => {
-      window.addEventListener("scroll", onScroll);
-    };
-    scrollListener();
+      window.addEventListener('scroll', onScroll)
+    }
+    scrollListener()
     return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  });
+      window.removeEventListener('scroll', onScroll)
+    }
+  })
 
   return (
     <>
-      <div className="min-h-screen">
+      <div className="grid grid-rows-footer min-h-screen">
         <Header active={scrollActive} />
         {children}
         <Footer />
       </div>
       <ScrollTop active={scrollActive} />
     </>
-  );
-};
+  )
+}

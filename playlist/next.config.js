@@ -5,9 +5,9 @@ module.exports = {
     rules: [
       {
         test: /\.json$/,
-        use: "json-loader",
-        type: "javascript/auto",
+        use: 'json-loader',
+        type: 'javascript/auto',
       },
     ],
   },
-};
+}

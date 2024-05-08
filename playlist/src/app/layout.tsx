@@ -1,19 +1,19 @@
-import "./globals.css";
-import { Inter } from "next/font/google";
+import './globals.css'
+import { Inter } from 'next/font/google'
 
-import { Recoil } from "@/components";
+import { Recoil } from '@/components'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: "Playing...",
-  description: "Portfolio Playlist",
-};
+  title: 'Ferv0r2 Article',
+  description: 'Portfolio Article',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="ko-KR">
@@ -21,5 +21,5 @@ export default function RootLayout({
         <Recoil>{children}</Recoil>
       </body>
     </html>
-  );
+  )
 }

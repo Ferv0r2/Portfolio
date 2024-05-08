@@ -1,1 +1,1 @@
-export * from "@/stores/polioState";
+export * from '@/stores/polioState'
