@@ -21,7 +21,7 @@ export const MasterLayout = ({ children }: Props) => {
 
   return (
     <>
-      <div className="min-h-screen">
+      <div className="grid grid-rows-footer min-h-screen">
         <Header active={scrollActive} />
         {children}
         <Footer />

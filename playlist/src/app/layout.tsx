@@ -6,7 +6,7 @@ import { Recoil } from '@/components'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Orbit Article',
+  title: 'Ferv0r2 Article',
   description: 'Portfolio Article',
 }
 
