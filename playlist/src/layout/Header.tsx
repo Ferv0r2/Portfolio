@@ -1,3 +1,4 @@
+import { BasicButton } from '@/components'
 import { NAV_LINKS } from '@/const'
 import { AutoSVG, smoothScrollTo } from '@/utils'
 import clsx from 'clsx'
@@ -10,18 +11,16 @@ interface Props {
 
 export const Header: FC<Props> = ({ active }) => {
   return (
-    <header
-      className={clsx(
-        'sticky top-0 left-0 z-10 text-gray-100 px-4 py-6 transition-all shadow-sm shadow-black duration-500',
-        active ? 'bg-zinc-900' : 'bg-black/80',
-      )}
-    >
-      <div className="container mx-auto max-w-[1200px]">
+    <header className="sticky top-0 left-0 z-10 bg-white text-gray-600 px-4 py-6 border-b-2">
+      <div className="container mx-auto max-w-[1440px]">
         <nav className="flex items-center justify-between">
           <Link href="/">
-            <div className="special-text text-2xl font-bold">Ferv0r2</div>
+            <div className="text-2xl font-bold">Ferv0r2</div>
           </Link>
-          <nav className="md:flex hidden space-x-8 text-md">
+          <BasicButton className="bg-bg_main hover:bg-bg_main/90 text-zinc-50">
+            CONTACT ME
+          </BasicButton>
+          {/* <nav className="md:flex hidden space-x-8 text-md">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.id}
@@ -35,7 +34,7 @@ export const Header: FC<Props> = ({ active }) => {
           <AutoSVG
             className="md:hidden flex"
             src="/media/icons/hamburger.svg"
-          />
+          /> */}
         </nav>
       </div>
     </header>

@@ -4,7 +4,7 @@ import { NAV_LINKS, OTHER_LINKS } from '@/const'
 
 export const Footer = () => {
   return (
-    <div className="bg-zinc-800 dark:bg-dark-700 text-neutral-300">
+    <div className="bg-zinc-800 text-neutral-300">
       <footer className="max-w-[1200px] mx-auto px-4 py-8">
         <nav className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 items-start text-sm">
           <ul>
