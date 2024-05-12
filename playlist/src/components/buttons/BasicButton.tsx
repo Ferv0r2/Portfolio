@@ -12,7 +12,7 @@ export const BasicButton: FC<Props> = ({ children, className }) => {
       type="button"
       className={clsx(
         className,
-        'cursor-pointer border-2 rounded-3xl px-4 py-3 font-medium text-sm',
+        'cursor-pointer rounded-3xl px-4 py-3 font-medium text-sm',
       )}
     >
       {children}

@@ -1,9 +1,10 @@
-import { BasicButton } from '@/components'
-import { NAV_LINKS } from '@/const'
-import { AutoSVG, smoothScrollTo } from '@/utils'
-import clsx from 'clsx'
-import Link from 'next/link'
 import React, { FC } from 'react'
+import Link from 'next/link'
+import clsx from 'clsx'
+import { ReactSVG } from 'react-svg'
+import { BasicButton } from '@/components'
+// import { NAV_LINKS } from '@/const'
+// import { smoothScrollTo } from '@/utils'
 
 interface Props {
   active: boolean
@@ -11,13 +12,30 @@ interface Props {
 
 export const Header: FC<Props> = ({ active }) => {
   return (
-    <header className="sticky top-0 left-0 z-10 bg-white text-gray-600 px-4 py-6 border-b-2">
+    <header
+      className={clsx(
+        'sticky group top-0 left-0 z-10  px-4 py-4 transition-colors duration-300',
+        active
+          ? 'bg-zinc-800/95 text-zinc-50'
+          : 'bg-zinc-50 text-gray-600 border-b-2',
+      )}
+    >
       <div className="container mx-auto max-w-[1440px]">
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between px-4">
           <Link href="/">
-            <div className="text-2xl font-bold">Ferv0r2</div>
+            <ReactSVG
+              className={active ? 'text-zinc-50' : 'text-black w-48'}
+              src="/media/logos/logo_group.svg"
+            />
           </Link>
-          <BasicButton className="bg-bg_main hover:bg-bg_main/90 text-zinc-50">
+          <BasicButton
+            className={clsx(
+              'font-bold',
+              active
+                ? 'bg-zinc-50 hover:bg-zinc-50/90 text-black'
+                : 'bg-bg_main hover:bg-bg_main/90 text-zinc-50',
+            )}
+          >
             CONTACT ME
           </BasicButton>
           {/* <nav className="md:flex hidden space-x-8 text-md">

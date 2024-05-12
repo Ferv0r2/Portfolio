@@ -13,7 +13,7 @@ export default function Home() {
               <div className="relative flex justify-start mt-32">
                 <img
                   className="drop-shadow-2xl"
-                  src="/media/img/me.png"
+                  src="/media/img/work.png"
                   alt="me"
                 />
                 <img

@@ -47,7 +47,7 @@ export const Footer = () => {
           <div>
             <div className="flex items-center sm:justify-start justify-center">
               <div className="relative w-6 h-6 mr-2">
-                <img src="/favicon.ico" alt="logo" />
+                <img src="/media/logos/logo_char_24.png" />
               </div>
               <h2 className="font-bold">Ferv0r2</h2>
             </div>
