@@ -3,6 +3,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { ReactSVG } from 'react-svg'
 import { BasicButton } from '@/components'
+import { MY_EMAIL } from '@/const'
 // import { NAV_LINKS } from '@/const'
 // import { smoothScrollTo } from '@/utils'
 
@@ -11,6 +12,10 @@ interface Props {
 }
 
 export const Header: FC<Props> = ({ active }) => {
+  const onClickContact = () => {
+    window.open(`mailto:${MY_EMAIL}`, '_blank', 'noopener noreferrer')
+  }
+
   return (
     <header
       className={clsx(
@@ -35,6 +40,7 @@ export const Header: FC<Props> = ({ active }) => {
                 ? 'bg-zinc-50 hover:bg-zinc-50/90 text-black'
                 : 'bg-bg_main hover:bg-bg_main/90 text-zinc-50',
             )}
+            onClick={onClickContact}
           >
             CONTACT ME
           </BasicButton>

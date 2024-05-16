@@ -1,6 +1,6 @@
-import { GetPortfolioList } from '@/types'
+import { IPortfolio } from '@/types'
 
-export const mockPortfolio: GetPortfolioList.Response.Body = [
+export const mockPortfolio: IPortfolio[] = [
   {
     id: 1,
     bannerImage:
