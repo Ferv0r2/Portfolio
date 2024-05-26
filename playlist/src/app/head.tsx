@@ -26,10 +26,6 @@ export default function Head() {
       <meta name="theme-color" content="#ffffff" />
       <link rel="shortcut icon" href="/favicon.ico" />
       <link rel="canonical" href="https://wontae.site" />
-      <link
-        href="https://webfontworld.github.io/gmarket/GmarketSans.css"
-        rel="stylesheet"
-      />
       <meta name="author" content="Ferv0r2" />
       <meta name="keywords" content="#portfolio #interactive #playlist" />
       <meta name="application-name" content="Ferv0r2" />
