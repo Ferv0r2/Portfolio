@@ -20,7 +20,7 @@ export const BANNER_TOOLS: {
   },
   {
     name: 'tailwindcss',
-    position: 'top-12 left-12',
+    position: 'bottom-12 left-6',
     rotate: 'rotate-12',
   },
   {
