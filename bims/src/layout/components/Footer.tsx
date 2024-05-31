@@ -11,17 +11,7 @@ const Footer: FC = () => {
         className={`${classes.footerContainer} d-flex flex-column flex-md-row align-items-center justify-content-between`}
       >
         <div className="text-dark order-2 order-md-1">
-          <span className="text-muted fw-bold me-2">2023 &copy;</span>
-          <span className="text-muted fw-bold">
-            <a
-              className="btn btn-link btn-color-muted btn-active-color-primary mb-1 me-1"
-              href="https://github.com/Fervor2"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Fervor2
-            </a>
-            . ALL RIGHT RESERVED.
+          <span className="text-muted fw-bold">&copy; 2024. Ferv0r2 ALL RIGHTS RESERVED.
           </span>
         </div>
 
@@ -42,11 +32,11 @@ const Footer: FC = () => {
           <li className="menu-item">
             <a
               target="_blank"
-              href="https://wontae.site/"
+              href="https://ferv0r2.github.io/"
               className="menu-link"
               rel="noreferrer"
             >
-              Main Site
+              Blog
             </a>
           </li>
         </ul>

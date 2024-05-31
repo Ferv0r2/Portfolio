@@ -17,7 +17,6 @@ export const Login = () => {
   useEffect(() => {
     if (!isLoading) return;
     const timer = setTimeout(() => {
-      setIsLoading(false);
       sessionStorage.setItem("ACCOUNT_INFO", JSON.stringify(account));
       selectedWallet && sessionStorage.setItem("WALLET_INFO", selectedWallet);
       document.location.reload();
