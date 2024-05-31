@@ -19,10 +19,10 @@ export const Header: FC<Props> = ({ active }) => {
   return (
     <header
       className={clsx(
-        'sticky group top-0 left-0 z-10  px-4 py-4 transition-colors duration-300',
+        'sticky top-0 left-0 z-10  px-4 py-4 transition-colors duration-300 border-b-2',
         active
-          ? 'bg-zinc-800/95 text-zinc-50'
-          : 'bg-zinc-50 text-gray-600 border-b-2',
+          ? 'bg-zinc-800/95 border-zinc-800/95 text-zinc-50 shadow-md'
+          : 'bg-zinc-50 text-gray-600',
       )}
     >
       <div className="container mx-auto max-w-[1440px]">
@@ -33,17 +33,19 @@ export const Header: FC<Props> = ({ active }) => {
               src="/media/logos/logo_group.svg"
             />
           </Link>
-          <BasicButton
+          <div
             className={clsx(
-              'font-bold',
-              active
-                ? 'bg-zinc-50 hover:bg-zinc-50/90 text-black'
-                : 'bg-bg_main hover:bg-bg_main/90 text-zinc-50',
+              'p-px rounded-full bg-gradient-to-b from-indigo-300 via-purple-300 to-pink-300 group',
+              active ? 'text-black' : 'bg-transparent',
             )}
-            onClick={onClickContact}
           >
-            CONTACT ME
-          </BasicButton>
+            <BasicButton
+              className="font-extrabold bg-zinc-50 duration-300 transition-colors group-hover:bg-gradient-to-b group-hover:from-indigo-300 group-hover:via-purple-300 group-hover:to-pink-300 group-hover:text-zinc-50"
+              onClick={onClickContact}
+            >
+              CONTACT
+            </BasicButton>
+          </div>
           {/* <nav className="md:flex hidden space-x-8 text-md">
             {NAV_LINKS.map((link) => (
               <a
