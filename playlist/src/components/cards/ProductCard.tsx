@@ -1,13 +1,34 @@
+'use client'
+
 import React, { FC } from 'react'
+import Link from 'next/link'
 
 interface Props {
-  name: string
+  path: string
+  title: string
+  description: string
+  bannerImage: string
 }
 
-export const ProductCard: FC<Props> = ({ name }) => {
+export const ProductCard: FC<Props> = ({
+  path,
+  title,
+  description,
+  bannerImage,
+}) => {
   return (
-    <div className="rounded-lg border shadow-md w-full h-48 bg-gray-100 flex flex-col items-center justify-center">
-      {name}
-    </div>
+    <Link href={`/${path}`}>
+      <article className="productCard flex flex-col gap-4">
+        <img
+          className="w-full h-56 object-cover rounded-xl shadow-md border"
+          src={bannerImage}
+          alt={title}
+        />
+        <div className="w-full">
+          <h2 className="w-full text-start text-xl font-extrabold">{title}</h2>
+          <p className="w-full mt-4 line-clamp-3">{description}</p>
+        </div>
+      </article>
+    </Link>
   )
 }

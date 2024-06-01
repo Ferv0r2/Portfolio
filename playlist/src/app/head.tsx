@@ -20,6 +20,20 @@ export default function Head() {
         sizes="16x16"
         href="/favicon-16x16.png"
       />
+      <meta
+        content="안녕하세요, 프론트엔드 개발자 황원태입니다."
+        name="description"
+      />
+      <meta property="og:url" content="https://wontae.net" />
+      <meta property="og:site_name" content="Fervor2 Article" />
+      <meta
+        property="og:description"
+        content="안녕하세요, 프론트엔드 개발자 황원태입니다"
+      />
+      <meta property="og:title" content="Fervor2 Article" />
+      <meta property="og:image" name="image" content="/media/banner/card.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ea7a29" />
       <meta name="msapplication-TileColor" content="#ea7a29" />

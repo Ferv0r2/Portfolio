@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { ReactSVG } from 'react-svg'
-import { BasicButton } from '@/components'
+import { LinkButton } from '@/components'
 import { MY_EMAIL } from '@/const'
 // import { NAV_LINKS } from '@/const'
 // import { smoothScrollTo } from '@/utils'
@@ -12,10 +12,6 @@ interface Props {
 }
 
 export const Header: FC<Props> = ({ active }) => {
-  const onClickContact = () => {
-    window.open(`mailto:${MY_EMAIL}`, '_blank', 'noopener noreferrer')
-  }
-
   return (
     <header
       className={clsx(
@@ -35,16 +31,17 @@ export const Header: FC<Props> = ({ active }) => {
           </Link>
           <div
             className={clsx(
-              'p-px rounded-full bg-gradient-to-b from-indigo-300 via-purple-300 to-pink-300 group',
+              'md:flex hidden p-px rounded-full bg-gradient-to-b from-indigo-300 via-purple-300 to-pink-300 group',
               active ? 'text-black' : 'bg-transparent',
             )}
           >
-            <BasicButton
-              className="font-extrabold bg-zinc-50 duration-300 transition-colors group-hover:bg-gradient-to-b group-hover:from-indigo-300 group-hover:via-purple-300 group-hover:to-pink-300 group-hover:text-zinc-50"
-              onClick={onClickContact}
+            <LinkButton
+              url={`mailto:${MY_EMAIL}`}
+              isExternal
+              className="font-[800] bg-zinc-50 duration-300 transition-colors group-hover:bg-gradient-to-b group-hover:from-indigo-300 group-hover:via-purple-300 group-hover:to-pink-300 group-hover:text-zinc-50"
             >
               CONTACT
-            </BasicButton>
+            </LinkButton>
           </div>
           {/* <nav className="md:flex hidden space-x-8 text-md">
             {NAV_LINKS.map((link) => (
