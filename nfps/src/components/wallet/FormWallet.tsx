@@ -15,7 +15,7 @@ const FormWallet: FC<Props> = ({ address }) => {
         <div className="flex items-center bg-neutral-100 dark:bg-dark-400 p-3 rounded border border-gray-400 dark:border-dark-300">
           <div className="flex items-center gap-x-2">
             <AutoSVG
-              src="/media/social-logos/metamask.svg"
+              src="/media/svg/social-logos/metamask.svg"
               className="w-5 h-5 mx-2"
             />
             <span className="font-semibold">
