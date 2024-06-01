@@ -10,7 +10,10 @@ const suitFont = localFont({
 
 export const metadata = {
   title: 'Ferv0r2 Article',
-  description: 'Portfolio Article',
+  description: '안녕하세요, 프론트엔드 개발자 황원태입니다',
+  url: 'https://wontae.net/',
+  robots: 'follow, index',
+  image: '/media/banner/card.png',
 }
 
 export default function RootLayout({
