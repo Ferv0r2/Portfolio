@@ -18,7 +18,7 @@ export const Login = () => {
     if (!isLoading) return;
     const timer = setTimeout(() => {
       sessionStorage.setItem("ACCOUNT_INFO", JSON.stringify(account));
-      selectedWallet && sessionStorage.setItem("WALLET_INFO", selectedWallet);
+      selectedWallet && sessionStorage.setItem("WALLET_INFO", selectedWallet.toLowerCase());
       document.location.reload();
     }, 2000);
 

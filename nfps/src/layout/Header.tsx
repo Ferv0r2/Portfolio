@@ -207,7 +207,7 @@ export const Header: FC<Props> = ({ active }) => {
                     <span className="flex itens-center mx-auto">
                       <AutoSVG
                         className="h-5 w-5 text-gray-800 mr-2"
-                        src="/media/svg/social-logos/metamask.svg"
+                        src="/media/social-logos/metamask.svg"
                       />
                       지갑 연결하기
                     </span>

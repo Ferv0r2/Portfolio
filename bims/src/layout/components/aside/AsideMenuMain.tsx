@@ -4,7 +4,7 @@ import { FC, Fragment } from "react";
 import { useCollection } from "hooks/useCollection";
 import { useAuth } from "hooks/useAuth";
 
-/* Componet */
+/* Component */
 import { AsideMenuItemWithSub } from "layout/components/aside/AsideMenuItemWithSub";
 import { AsideMenuItem } from "layout/components/aside/AsideMenuItem";
 import { AsideMenuUser } from "layout/components/aside/AsideMenuUser";
