@@ -13,7 +13,9 @@ export const metadata = {
   description: '안녕하세요, 프론트엔드 개발자 황원태입니다',
   url: 'https://wontae.net/',
   robots: 'follow, index',
-  image: '/media/banner/card.png',
+  openGraph: {
+    images: '/media/banner/card.png',
+  },
 }
 
 export default function RootLayout({
