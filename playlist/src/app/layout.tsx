@@ -14,7 +14,7 @@ export const metadata = {
   url: 'https://wontae.net/',
   robots: 'follow, index',
   openGraph: {
-    images: ['/media/banner/card.png'],
+    images: ['media/banner/card.png'],
   },
 }
 

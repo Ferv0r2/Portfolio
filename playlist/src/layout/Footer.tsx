@@ -1,6 +1,6 @@
 import React from 'react'
-import { smoothScrollTo } from '@/utils'
 import { NAV_LINKS, OTHER_LINKS } from '@/const'
+import Link from 'next/link'
 
 export const Footer = () => {
   return (
@@ -13,13 +13,13 @@ export const Footer = () => {
             </li>
             <nav className="flex gap-4 m-2 sm:justify-start justify-center">
               {NAV_LINKS.map((link) => (
-                <a
+                <Link
+                  href={`#${link.id}`}
                   key={link.id}
                   className="text-gray-50 hover:text-indigo-600 transition-colors duration-300 cursor-pointer"
-                  onClick={() => smoothScrollTo(link.id)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </ul>
@@ -47,7 +47,7 @@ export const Footer = () => {
           <div>
             <div className="flex items-center sm:justify-start justify-center">
               <div className="relative w-6 h-6 mr-2">
-                <img src="/media/logos/logo_char_24.png" alt="Logo" />
+                <img src="media/logos/logo_char_24.png" alt="Logo" />
               </div>
               <h2 className="font-bold">Ferv0r2</h2>
             </div>

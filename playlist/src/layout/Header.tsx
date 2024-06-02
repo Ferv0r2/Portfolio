@@ -26,7 +26,7 @@ export const Header: FC<Props> = ({ active }) => {
           <Link href="/">
             <ReactSVG
               className={active ? 'text-zinc-50' : 'text-black w-48'}
-              src="/media/logos/logo_group.svg"
+              src="media/logos/logo_group.svg"
             />
           </Link>
           <div
@@ -56,7 +56,7 @@ export const Header: FC<Props> = ({ active }) => {
           </nav>
           <AutoSVG
             className="md:hidden flex"
-            src="/media/icons/hamburger.svg"
+            src="media/icons/hamburger.svg"
           /> */}
         </nav>
       </div>

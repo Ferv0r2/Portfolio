@@ -18,7 +18,7 @@ export const ProductCard: FC<Props> = ({
 }) => {
   return (
     <Link href={`/${path}`}>
-      <article className="productCard flex flex-col gap-4">
+      <article className="flex flex-col gap-4">
         <img
           className="w-full h-56 object-cover rounded-xl shadow-md border"
           src={bannerImage}
