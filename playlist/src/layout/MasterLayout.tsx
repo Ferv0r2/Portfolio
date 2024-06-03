@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { Header, Footer, ScrollTop } from '@/layout'
 import { useScroll } from '@/hooks'
 

@@ -9,12 +9,13 @@ const suitFont = localFont({
 })
 
 export const metadata = {
+  metadataBase: new URL('https://wontae.net'),
   title: 'Ferv0r2 Article',
   description: '안녕하세요, 프론트엔드 개발자 황원태입니다',
   url: 'https://wontae.net/',
   robots: 'follow, index',
   openGraph: {
-    images: ['media/banner/card.png'],
+    images: ['/media/banner/card.png'],
   },
 }
 
