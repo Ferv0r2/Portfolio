@@ -5,7 +5,7 @@ const metaData = {
   title: "NFPS",
   siteName: "NPFS",
   description: "NFT Project Funding Solution",
-  url: "https://nfps.wontae.site/",
+  url: "https://nfps.wontae.net/",
   robots: "follow, index",
   image: "banner.png",
 };

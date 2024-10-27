@@ -13,7 +13,9 @@ import { BANNER_TOOLS, MY_BLOG } from '@/const'
 export default function Home() {
   const draggableRef = useRef<HTMLDivElement | null>(null)
   const productRef = useRef<HTMLDivElement | null>(null)
+  const publicProductRef = useRef<HTMLDivElement | null>(null)
   const isInView = useInView(productRef)
+  const isInViewPublic = useInView(publicProductRef)
   const controls = useAnimationControls()
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [productList, setProductList] = useState<IPortfolio[]>([])
@@ -33,10 +35,13 @@ export default function Home() {
   }, [controls, isInView])
 
   useEffect(() => {
+    setIsLoading(true)
     setProductList(mockPortfolio)
+    setIsLoading(false)
   }, [])
 
   if (isLoading || !productList) return <LoadingContainer />
+
   return (
     <>
       <MasterLayout>
@@ -118,7 +123,37 @@ export default function Home() {
           >
             <h1 className="text-2xl font-extrabold">
               <span className={isInView ? 'border-b-4 border-indigo-400' : ''}>
-                프로젝트
+                개인 프로젝트
+              </span>
+            </h1>
+            <div className="mt-8 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 place-content-center">
+              {productList.length > 0 ? (
+                productList.map(
+                  ({ id, bannerImage, title, description, name }, idx) => (
+                    <motion.div custom={idx} animate={controls} key={id}>
+                      <ProductCard
+                        path={name}
+                        title={title}
+                        description={description}
+                        bannerImage={bannerImage}
+                      />
+                    </motion.div>
+                  ),
+                )
+              ) : (
+                <div className="text-2xl font-extrabold">불러오는 중...</div>
+              )}
+            </div>
+          </section>
+          <section
+            ref={publicProductRef}
+            className="max-w-[1200px] w-full mx-auto px-8 pt-32 -mt-20"
+          >
+            <h1 className="text-2xl font-extrabold">
+              <span
+                className={isInViewPublic ? 'border-b-4 border-indigo-400' : ''}
+              >
+                사내 프로젝트
               </span>
             </h1>
             <div className="mt-8 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 place-content-center">

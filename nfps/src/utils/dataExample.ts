@@ -124,7 +124,7 @@ export const contactItems: ALink[] = [
 export const otherItems: ALink[] = [
   {
     name: "메인 홈페이지",
-    url: "https://wontae.site",
+    url: "https://wontae.net",
   },
   {
     name: "BIMS",

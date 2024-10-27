@@ -34,7 +34,7 @@ export default function Home() {
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://docs.kepler.wontae.site/"
+                href="https://docs.kepler.wontae.net/"
                 className="flex underline underline-offset-4 justify-center items-center hover:text-hoverPink"
               >
                 <p>GUIDE BOOK</p>

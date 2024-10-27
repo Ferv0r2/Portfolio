@@ -4,7 +4,7 @@ const metaData = {
   title: '황원태',
   siteName: '황원태',
   description: '#Front-End #dev',
-  url: 'https://wontae.site/',
+  url: 'https://wontae.net/',
   robots: 'follow, index',
   image: 'images/intro.png',
 };

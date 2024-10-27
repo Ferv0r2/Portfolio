@@ -15,7 +15,7 @@
 
 ### Link
 
-- [Main](https://kepler.wontae.site) // 수정 진행중
-- [Docs](https://docs.kepler.wontae.site/)
+- [Main](https://kepler.wontae.net)
+- [Docs](https://docs.kepler.wontae.net/)
 - [Medium](https://medium.com/@Kepler-452b)
 - [OpenSea](https://opensea.io/collection/kepler-452b-official)
